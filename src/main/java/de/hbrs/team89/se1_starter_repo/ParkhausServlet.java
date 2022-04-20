@@ -24,6 +24,7 @@ public abstract class ParkhausServlet extends HttpServlet {
     abstract String config(); // configuration of a single parking level
 
     int anzAutos = 0;
+    double sumDuration = 0;
     /**
      * HTTP GET
      */
@@ -44,6 +45,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "avg":
                 out.println((getSum()/100)/anzAutos);
+                out.println((sumDuration/1000)/anzAutos);
                 break;
             case "min":
                 // ToDo: insert algorithm for calculating min here
@@ -97,6 +99,7 @@ public abstract class ParkhausServlet extends HttpServlet {
             case "leave":
                 CarIF oldCar = cars().get(0);  // ToDo remove car from list
                 anzAutos ++;
+                sumDuration += Double.parseDouble(params[3]);
                 double price = 0.0d;
                 if ( params.length > 4 ){
                     String priceString = params[4];
