@@ -24,6 +24,7 @@ public abstract class ParkhausServlet extends HttpServlet {
     abstract String config(); // configuration of a single parking level
 
     int anzAutos = 0;
+    int gesamtAutos = 0;
     double sumDuration = 0;
     /**
      * HTTP GET
@@ -67,6 +68,10 @@ public abstract class ParkhausServlet extends HttpServlet {
             case "chart":
                 // TODO send chart infos as JSON object to client
                 break;
+            case "Gesamtanzahl Autos":
+                out.println(gesamtAutos);
+
+                break;
             default:
                 System.out.println("Invalid Command: " + request.getQueryString());
         }
@@ -95,6 +100,7 @@ public abstract class ParkhausServlet extends HttpServlet {
 
                 // re-direct car to another parking lot
                 out.println( locator( newCar ) );
+                gesamtAutos++;
                 break;
             case "leave":
                 CarIF oldCar = cars().get(0);  // ToDo remove car from list
