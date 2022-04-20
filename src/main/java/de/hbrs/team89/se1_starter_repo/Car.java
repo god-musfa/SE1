@@ -16,7 +16,7 @@ public class Car implements CarIF {
 
     @Override
     public long begin() {
-        return 0;
+        return Long.parseLong(params[1]);
     }
 
     @Override

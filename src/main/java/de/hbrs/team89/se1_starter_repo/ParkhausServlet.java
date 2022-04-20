@@ -23,6 +23,7 @@ public abstract class ParkhausServlet extends HttpServlet {
     abstract int MAX(); // maximum number of parking slots of a single parking level
     abstract String config(); // configuration of a single parking level
 
+    int anzAutos = 0;
     /**
      * HTTP GET
      */
@@ -39,7 +40,6 @@ public abstract class ParkhausServlet extends HttpServlet {
                 out.println( config() );
                 break;
             case "sum":
-                // ToDo: insert algorithm for calculating sum here
                 out.println(String.format("%.2f€",getSum()/100 ));
                 break;
             case "avg":
@@ -96,6 +96,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "leave":
                 CarIF oldCar = cars().get(0);  // ToDo remove car from list
+                anzAutos ++;
                 double price = 0.0d;
                 if ( params.length > 4 ){
                     String priceString = params[4];
