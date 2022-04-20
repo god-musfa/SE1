@@ -40,7 +40,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "sum":
                 // ToDo: insert algorithm for calculating sum here
-                out.println( "sum = server side calculated sum" );
+                out.println(String.format("%.2f€",getSum()/100 ));
                 break;
             case "avg":
                 // ToDo
@@ -102,8 +102,9 @@ public abstract class ParkhausServlet extends HttpServlet {
                     if ( ! "_".equals( priceString ) ){
                         price = (double)new Scanner( priceString ).useDelimiter("\\D+").nextInt();
                         price /= 100.0d;  // just as Integer.parseInt( priceString ) / 100.0d;
+                        price = Math.round(price*100)/100; //rounding so we have nice numbers
                         // store new sum in ServletContext
-                        // ToDo getContext().setAttribute("sum"+NAME(), getSum() + price );
+                        getContext().setAttribute("sum"+NAME(), getSum() + price );
                     }
                 }
                 out.println( price );  // server calculated price
@@ -123,8 +124,10 @@ public abstract class ParkhausServlet extends HttpServlet {
         }
 
     }
-
-
+    Double getSum(){
+        Double sum = (Double)getContext().getAttribute("sum"+NAME());
+        return sum == null ?  0.0d : sum;
+    }
     // auxiliary methods used in HTTP request processing
 
     /**
