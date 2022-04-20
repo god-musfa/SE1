@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="author" content="Team89 (C) 2021">
+    <meta name="author" content="Team19 (C) 2021">
     <meta name="description" content="Software Engineering 1 (SE1)">
     <meta name="license" content="The MIT License (MIT)">
     <meta name="theme-color" content="#239BD1"/>
@@ -41,14 +41,14 @@
 </head>
 <body>
 <div class="box center grey-background">
-    <h1>Parkhaus Team89</h1>
+    <h1>Parkhaus Team19</h1>
     <p>Tomcat Version : <%= application.getServerInfo() %></p>
 </div>
 <div class="box lightblue">
     <h2><a href="kasse.jsp">Kasse</a></h2>
 </div>
 <div class="box lightyellow">
-    <h1>Parkhaus Frauenparkplätze</h1>
+    <h1>Parkhaus Etage 1</h1>
     <ccm-parkhaus-11-0-0 server_url="./level1-servlet"
                          debug="true"
                          name="Etage1"
@@ -72,7 +72,7 @@
                          vehicle_types='["PKW","SUV"]'
                          price_factor='{"SUV":2,"Business":1}'
                          debug="true"
-                         hide_table="true"
+                         hide_table="false"
                          SALT="456">
     </ccm-parkhaus-11-0-0>
 </div>
