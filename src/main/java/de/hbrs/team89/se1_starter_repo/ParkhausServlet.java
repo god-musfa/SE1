@@ -43,7 +43,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                 out.println(String.format("%.2f€",getSum()/100 ));
                 break;
             case "avg":
-                // ToDo
+                out.println((getSum()/100)/anzAutos);
                 break;
             case "min":
                 // ToDo: insert algorithm for calculating min here
