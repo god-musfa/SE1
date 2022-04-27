@@ -15,7 +15,7 @@ class CarTest {
 
     @Test
     void nrTest() {
-        assertEquals("6",car.nr());
+        assertEquals(6,car.nr());
     }
 
     @Test
