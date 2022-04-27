@@ -11,7 +11,8 @@ public class Car implements CarIF {
 
     @Override
     public int nr() {
-        return 0;
+        int x = Integer.parseInt(params[0]);
+        return x;
     }
 
     @Override
