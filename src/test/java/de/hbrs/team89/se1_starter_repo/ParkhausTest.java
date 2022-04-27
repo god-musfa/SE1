@@ -52,9 +52,9 @@ class ParkhausTest {
     void leaveEnterTest() {
         ph.enter(c1);
         ph.enter(c2);
-        assertTrue(ph.leave(1));
+        ph.leave(1);
         ph.enter(c3);
-        assertTrue(ph.leave(3));
+        assertEquals(c3.nr(),ph.getCars()[0].nr());
     }
 
     @AfterEach
