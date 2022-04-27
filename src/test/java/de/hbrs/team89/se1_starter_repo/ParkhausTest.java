@@ -47,12 +47,21 @@ class ParkhausTest {
         assertFalse(ph.leave(4));
     }
 
+    @Test
+    @DisplayName("Prueft ob Autos an erwarteter Position eingefuegt werden")
+    void leaveEnterTest() {
+        ph.enter(c1);
+        ph.enter(c2);
+        assertTrue(ph.leave(1));
+        ph.enter(c3);
+        assertTrue(ph.leave(3));
+    }
+
     @AfterEach
     void tearDown() {
         st1 = null;
         st2 = null;
         st3 = null;
-        ph = null;
         ph = null;
         c1 = null;
         c2 = null;
