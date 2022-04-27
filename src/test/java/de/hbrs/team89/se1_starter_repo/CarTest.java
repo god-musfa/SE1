@@ -20,17 +20,21 @@ class CarTest {
 
     @Test
     void begin() {
+        fail("not yet implemented");
     }
 
     @Test
     void end() {
+        fail("not yet implemented");
     }
 
     @Test
     void duration() {
+        fail("not yet implemented");
     }
 
     @Test
     void price() {
+        fail("not yet implemented");
     }
 }
