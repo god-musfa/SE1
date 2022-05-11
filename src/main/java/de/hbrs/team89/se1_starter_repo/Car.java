@@ -15,6 +15,11 @@ public class Car implements CarIF {
         return x;
     }
 
+    public String getType(){
+        return params[8];
+    }
+
+
     @Override
     public long begin() {
         return Long.parseLong(params[1]);

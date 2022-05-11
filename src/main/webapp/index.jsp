@@ -54,6 +54,7 @@
                          name="Etage1"
                          license_max="15"
                          extra_buttons='["sum","min","avg","Gesamtanzahl Autos"]'
+                         extra_charts = '[chart]'
                          client_categories='["Frau"]'
                          space_color='{"1":"pink"}'
                          vehicle_types='["PKW","SUV"]'

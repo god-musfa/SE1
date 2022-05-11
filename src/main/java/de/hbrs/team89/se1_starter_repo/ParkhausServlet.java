@@ -12,6 +12,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import com.google.gson.*;
+import jakarta.json.*;
+import jakarta.json.JsonObject;
+
 /**
  * common superclass for all servlets
  * groups all auxiliary common methods used in all servlets
@@ -67,6 +70,32 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "chart":
                 // TODO send chart infos as JSON object to client
+                List x = new ArrayList<String>();
+                for (CarIF c : cars()){
+                    if(!x.contains(c.getType())){
+                        x.add(c.getType());
+                    }
+                }
+                String[] y = (String[])x.toArray();
+                int[] z = new int[y.length];
+                for(CarIF c : cars()){
+                    for(int i = 0 ; i!= z.length; i++) {
+                        if (c.getType().equals(y[i])) {
+                            z[i]++;
+                            break;
+                        }
+                    }
+                }
+
+                JsonObject chart = Json.createObjectBuilder()
+                        .add("data",Json.createArrayBuilder()
+                                .add(Json.createObjectBuilder()
+                                        .add("values",Arrays.toString(z) )
+                                        .add("labels", Arrays.toString(y))
+                                        .add("type", "pie"))).build();
+
+
+
                 break;
             case "Gesamtanzahl Autos":
                 out.println(gesamtAutos);
