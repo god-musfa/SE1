@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="https://kaul.inf.h-brs.de/favicon.ico" />
     <title>Tomcat Parkhaus</title>
     <script src="https://kaul.inf.h-brs.de/ccmjs/mkaul-components/parkhaus/versions/ccm.parkhaus-11.0.0.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+
     <style>
         * {
             font-family: sans-serif, Helvetica, Arial;
@@ -54,7 +56,7 @@
                          name="Etage1"
                          license_max="15"
                          extra_buttons='["sum","min","avg","Gesamtanzahl Autos"]'
-                         extra_charts = '[chart]'
+                         extra_charts='[{"extra_class":"chart","extra_inner":"","extra_popup_title":""}]'
                          client_categories='["Frau"]'
                          space_color='{"1":"pink"}'
                          vehicle_types='["PKW","SUV"]'

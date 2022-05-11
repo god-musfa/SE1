@@ -76,11 +76,11 @@ public abstract class ParkhausServlet extends HttpServlet {
                         x.add(c.getType());
                     }
                 }
-                String[] y = (String[])x.toArray();
+                String[] y = (String[]) x.toArray((new String[x.size()]));
                 int[] z = new int[y.length];
                 for(CarIF c : cars()){
                     for(int i = 0 ; i!= z.length; i++) {
-                        if (c.getType().equals(y[i])) {
+                        if (c.getType().equals((String)y[i])) {
                             z[i]++;
                             break;
                         }
@@ -93,9 +93,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                                         .add("values",Arrays.toString(z) )
                                         .add("labels", Arrays.toString(y))
                                         .add("type", "pie"))).build();
-
-
-
+                out.println(chart);
                 break;
             case "Gesamtanzahl Autos":
                 out.println(gesamtAutos);
