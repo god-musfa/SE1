@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
+import com.google.gson.*;
 /**
  * common superclass for all servlets
  * groups all auxiliary common methods used in all servlets
