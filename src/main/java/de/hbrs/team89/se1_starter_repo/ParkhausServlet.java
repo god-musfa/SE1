@@ -7,11 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import com.google.gson.*;
+import java.util.*;
+
 import jakarta.json.*;
 import jakarta.json.JsonObject;
 
@@ -85,15 +82,18 @@ public abstract class ParkhausServlet extends HttpServlet {
                             break;
                         }
                     }
+                }List<Integer> count = new ArrayList<>();
+                for (int f: z){
+                    count.add(f);
                 }
-
                 JsonObject chart = Json.createObjectBuilder()
                         .add("data",Json.createArrayBuilder()
                                 .add(Json.createObjectBuilder()
-                                        .add("values",Arrays.toString(z) )
-                                        .add("labels", Arrays.toString(y))
+                                        .add("values",Json.createArrayBuilder(count).build() )
+                                        .add("labels", Json.createArrayBuilder(x).build())
                                         .add("type", "pie"))).build();
-                out.println(chart);
+
+                out.println(chart.toString());
                 break;
             case "Gesamtanzahl Autos":
                 out.println(gesamtAutos);

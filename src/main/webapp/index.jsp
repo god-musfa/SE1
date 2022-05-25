@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="https://kaul.inf.h-brs.de/favicon.ico" />
     <title>Tomcat Parkhaus</title>
     <script src="https://kaul.inf.h-brs.de/ccmjs/mkaul-components/parkhaus/versions/ccm.parkhaus-11.0.0.js"></script>
-    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+
 
     <style>
         * {
