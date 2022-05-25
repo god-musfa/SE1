@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import jakarta.json.*;
 import jakarta.json.JsonObject;
@@ -66,26 +67,15 @@ public abstract class ParkhausServlet extends HttpServlet {
                 // out.println("1/1648465400000/_/_/Ticket1/#0d1e0a/2/any/PKW/1,2/1648465499999/_/_/Ticket2/#dd10aa/3/any/PKW/2");
                 break;
             case "chart":
-                // TODO send chart infos as JSON object to client
-                List x = new ArrayList<String>();
-                for (CarIF c : cars()){
-                    if(!x.contains(c.getType())){
-                        x.add(c.getType());
-                    }
+                List<String> x = cars().stream().map(y->y.getType()).distinct().collect(Collectors.toList());
+
+                List<Integer> count = new ArrayList<>();
+                for(String strings: x){
+                    count.add((int) cars().stream()
+                            .filter((CarIF c)  -> strings.equals(c.getType()))
+                            .count());
                 }
-                String[] y = (String[]) x.toArray((new String[x.size()]));
-                int[] z = new int[y.length];
-                for(CarIF c : cars()){
-                    for(int i = 0 ; i!= z.length; i++) {
-                        if (c.getType().equals((String)y[i])) {
-                            z[i]++;
-                            break;
-                        }
-                    }
-                }List<Integer> count = new ArrayList<>();
-                for (int f: z){
-                    count.add(f);
-                }
+
                 JsonObject chart = Json.createObjectBuilder()
                         .add("data",Json.createArrayBuilder()
                                 .add(Json.createObjectBuilder()
