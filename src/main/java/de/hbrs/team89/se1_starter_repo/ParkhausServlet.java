@@ -76,14 +76,9 @@ public abstract class ParkhausServlet extends HttpServlet {
                             .count());
                 }
 
-                JsonObject chart = Json.createObjectBuilder()
-                        .add("data",Json.createArrayBuilder()
-                                .add(Json.createObjectBuilder()
-                                        .add("values",Json.createArrayBuilder(count).build() )
-                                        .add("labels", Json.createArrayBuilder(x).build())
-                                        .add("type", "pie"))).build();
 
-                out.println(chart.toString());
+
+                out.println(ChartBuilder.createPieChart(x,count));
                 break;
             case "Gesamtanzahl Autos":
                 out.println(gesamtAutos);
