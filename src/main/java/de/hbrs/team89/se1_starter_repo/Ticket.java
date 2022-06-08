@@ -6,6 +6,7 @@ public class Ticket implements TicketIF{
 
     public Ticket(String ticketID){
         this.ticketID = ticketID;
+        this.price = 0.0;
     }
     @Override
     public double getPrice() {
