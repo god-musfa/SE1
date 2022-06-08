@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 public class Parkhaus implements ParkhausIF,IModelInterface{
 
+    private ArrayList<IObserverInterface> m_observers = new ArrayList<IObserverInterface>();
+
 
     Car[] cars = new Car[15];
     List<CarIF> carsList = new ArrayList<>();
@@ -49,16 +51,19 @@ public class Parkhaus implements ParkhausIF,IModelInterface{
 
     @Override
     public void registerObserver(IObserverInterface o) {
-
+        m_observers.add (o);
     }
 
     @Override
     public void removeObserver(IObserverInterface o) {
-
+        if (m_observers.contains (o))
+            m_observers.remove (o);
     }
 
     @Override
     public void notifyObservers() {
+        for (int i = 0; i < m_observers.size(); ++i)
+            m_observers.get (i).update();
 
     }
 }
