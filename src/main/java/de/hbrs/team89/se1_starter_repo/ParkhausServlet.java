@@ -67,16 +67,8 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 // out.println("1/1648465400000/_/_/Ticket1/#0d1e0a/2/any/PKW/1,2/1648465499999/_/_/Ticket2/#dd10aa/3/any/PKW/2");
                 break;
             case "chart":
-                List<String> x = cars().stream().map(y->y.getType()).distinct().collect(Collectors.toList());
-
-                List<Integer> count = new ArrayList<>();
-                for(String strings: x){
-                    count.add((int) cars().stream()
-                            .filter((CarIF c)  -> strings.equals(c.getType()))
-                            .count());
-                }
-
-                out.println(ChartBuilder.createPieChart(x,count));
+                StatisticCarTypes sct = new StatisticCarTypes();
+                out.println(sct.statistikErstellen(cars()));
                 break;
             case "Gesamtanzahl Autos":
                 out.println(gesamtAutos);
