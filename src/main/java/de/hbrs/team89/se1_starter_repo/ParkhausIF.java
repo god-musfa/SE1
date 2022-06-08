@@ -10,5 +10,5 @@ public interface ParkhausIF {
 
     Car[] getCars();
 
-    List<Ticket> getTicket();
+    List<TicketIF> getTicket();
 }

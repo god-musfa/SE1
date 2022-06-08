@@ -6,6 +6,6 @@ public interface IModelInterface extends IObservableInterface{
 
     public int enter(Car c);
     public boolean leave(int i);
-    public List<Ticket> getTicket();
+    public List<TicketIF> getTicket();
 
 }

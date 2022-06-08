@@ -17,15 +17,18 @@ public class Parkhaus implements ParkhausIF,IModelInterface{
             if(cars[i] == null){
                 cars[i]= c;
                 carsList.add(c);
+                this.notifyObservers();
                 return i+1;
             }
         }
+        this.notifyObservers();
          return -1;
     }
 
     @Override
     public boolean leave(int nr) { //ToDo Rueckgabewert noch aendern
         if (cars == null) {
+            this.notifyObservers();
             return false;
         }
         for(int i=0; i!=cars.length;i++){
@@ -34,14 +37,16 @@ public class Parkhaus implements ParkhausIF,IModelInterface{
             }
             if ((cars[i].nr() == nr && cars[i] != null)){
                 cars[i] = null;
+                this.notifyObservers();
                 return true;
             }
         }
+        this.notifyObservers();
         return false;
     }
 
     @Override
-    public List<Ticket> getTicket() {
+    public List<TicketIF> getTicket() {
         return carsList.stream().map(x->x.getTicket()).collect(Collectors.toList());
     }
 

@@ -13,9 +13,11 @@ public class DailyIncomeController implements IControllerInterface{
 
     @Override
     public void enter(Car c) {
+        m_model.enter(c);
     }
 
     @Override
     public void leave(int i) {
+        m_model.leave(i);
     }
 }
