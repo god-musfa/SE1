@@ -3,10 +3,11 @@ package de.hbrs.team89.se1_starter_repo;
 public class Ticket implements TicketIF{
     private String ticketID; //TicketID as Hash from Javascript
     private double price;
-    private long end;
-    public Ticket(String ticketID){
+    private long begin, end;
+    public Ticket(String ticketID, String begin){
         this.ticketID = ticketID;
         this.price = 0.0;
+        this.begin = Long.parseLong(begin);
     }
     @Override
     public double getPrice() {

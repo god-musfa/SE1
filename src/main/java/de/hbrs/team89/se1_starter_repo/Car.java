@@ -8,7 +8,7 @@ public class Car implements CarIF {
     Ticket t;
     public Car( String[] params ){
         this.params = params;
-        t = new Ticket(this.params[4]);
+        t = new Ticket(this.params[4], this.params[1]);
     }
 
     @Override
