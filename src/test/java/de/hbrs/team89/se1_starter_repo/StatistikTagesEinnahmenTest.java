@@ -15,10 +15,10 @@ StatistikTagesEinnahmen tages;
     void setUp() {
         tages = new StatistikTagesEinnahmen();
         tickets = new ArrayList<>();
-        tickets.add(new Ticket("fdsfgsdgrr"));
-        tickets.add(new Ticket("fasgsdhhhg"));
-        tickets.add(new Ticket("zzzfsddknfd"));
-        tickets.add(new Ticket(("jnigsnlijfsnlkj")));
+        tickets.add(new Ticket("fdsfgsdgrr", "1"));
+        tickets.add(new Ticket("fasgsdhhhg", "1"));
+        tickets.add(new Ticket("zzzfsddknfd", "1"));
+        tickets.add(new Ticket("jnigsnlijfsnlkj", "1"));
 
         long unix = 1654704862;
         tickets.get(0).setEnd(unix);
