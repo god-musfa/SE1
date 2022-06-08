@@ -14,6 +14,11 @@ public class Ticket implements TicketIF{
     }
 
     @Override
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
     public String getTicketID() {
         return this.ticketID;
     }
