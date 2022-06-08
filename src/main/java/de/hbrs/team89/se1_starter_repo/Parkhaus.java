@@ -1,6 +1,8 @@
 package de.hbrs.team89.se1_starter_repo;
 
-public class Parkhaus implements ParkhausIF{
+import java.util.List;
+
+public class Parkhaus implements ParkhausIF,IModelInterface{
 
 
     Car[] cars = new Car[15];
@@ -31,8 +33,28 @@ public class Parkhaus implements ParkhausIF{
         }
         return false;
     }
+
+    @Override
+    public List<Ticket> getTicket() {
+        return null;
+    }
+
     public Car[] getCars() {
         return cars;
     }
 
+    @Override
+    public void registerObserver(IObserverInterface o) {
+
+    }
+
+    @Override
+    public void removeObserver(IObserverInterface o) {
+
+    }
+
+    @Override
+    public void notifyObservers() {
+
+    }
 }

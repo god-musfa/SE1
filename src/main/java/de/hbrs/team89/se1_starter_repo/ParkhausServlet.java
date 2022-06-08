@@ -76,8 +76,6 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                             .count());
                 }
 
-
-
                 out.println(ChartBuilder.createPieChart(x,count));
                 break;
             case "Gesamtanzahl Autos":
