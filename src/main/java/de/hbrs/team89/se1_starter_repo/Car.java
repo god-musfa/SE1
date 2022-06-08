@@ -19,6 +19,11 @@ public class Car implements CarIF {
         return params[8];
     }
 
+    @Override
+    public String getHash() {
+        return null;
+    }
+
 
     @Override
     public long begin() {

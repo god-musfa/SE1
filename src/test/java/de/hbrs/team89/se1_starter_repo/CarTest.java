@@ -37,4 +37,9 @@ class CarTest {
     void price() {
         fail("not yet implemented");
     }
+
+    @Test
+    void ticketCreation(){
+        assertEquals("058e845e583d91de30e47b1f49c41411",car.getHash());
+    }
 }

@@ -18,9 +18,9 @@ class ParkhausTest {
 
     @BeforeEach
     void setUp() {
-        st1 = new String[]{"1", "2", "3"};
-        st2 = new String[]{"2", "2", "3"};
-        st3 = new String[]{"3", "2", "3"};
+        st1 = new String[]{"1", "2", "3", "ab","as"};
+        st2 = new String[]{"2", "2", "3","ab","ad"};
+        st3 = new String[]{"3", "2", "3","ab","af"};
         ph = new Parkhaus();
         c1 = new Car(st1);
         c2 = new Car(st2);
@@ -67,4 +67,16 @@ class ParkhausTest {
         c2 = null;
         c3 = null;
     }
+
+    @Test
+    void getTicket() {
+        ph.enter(c1);
+        ph.enter(c2);
+        ph.enter(c3);
+
+        assertEquals(ph.getTicket().get(0).getTicketID(),"as");
+        assertEquals(ph.getTicket().get(1).getTicketID(),"ad");
+        assertEquals(ph.getTicket().get(2).getTicketID(),"af");
+    }
+
 }
