@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StatistikTagesEinnahmenTest {
+class EinnahmenStatistikTagesEinnahmenTest {
 ArrayList<TicketIF> tickets;
 StatistikTagesEinnahmen tages;
     @BeforeEach
