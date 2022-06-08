@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DailyIncomeViewTest {
 
     Parkhaus ph;
-    WeeklyIncomeView wi;
+    DailyIncomeView wi;
     Car c1;
     Car c2;
     Car c3;
@@ -18,7 +18,7 @@ class DailyIncomeViewTest {
     @BeforeEach
     void setUp() {
         ph = new Parkhaus();
-        wi =new WeeklyIncomeView(ph);
+        wi = new DailyIncomeView(ph);
         st1 = new String[]{"1", "2", "3", "ab","as"};
         st2 = new String[]{"2", "2", "3","ab","ad"};
         st3 = new String[]{"3", "2", "3","ab","af"};
@@ -39,7 +39,7 @@ class DailyIncomeViewTest {
         wi.enterCar(c1);
         wi.enterCar(c2);
         wi.enterCar(c3);
-        assertEquals(2000.00,wi.getWeeklyIncome());
+        assertEquals(2000.00,wi.getDailyIncome());
 
     }
 
