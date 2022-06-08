@@ -5,14 +5,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ChartBuilderTest {
+class StatisticCarTypesTest {
     List<Integer> nums;
     List<String>  strings;
+    StatisticCarTypes sct = new StatisticCarTypes();
     @BeforeEach
     void setUp() {
     nums = new ArrayList<>(List.of(new Integer[]{1, 2, 3, 4, 5}));
@@ -22,7 +22,7 @@ class ChartBuilderTest {
     @Test
     void createPieChart() {
         String test = "{\"data\":[{\"values\":" + Json.createArrayBuilder(nums).build().toString()+",\"labels\":" + Json.createArrayBuilder(strings).build().toString() +",\"type\":\"pie\"}]}";
-        assertEquals(test,ChartBuilder.createPieChart(strings,nums).toString());
+        assertEquals(test,sct.statistikAnzeigen(strings,nums).toString());
 
 
 
