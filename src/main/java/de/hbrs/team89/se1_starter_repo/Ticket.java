@@ -4,11 +4,9 @@ public class Ticket implements TicketIF{
     private String ticketID; //TicketID as Hash from Javascript
     private double price;
     private long end;
-    public Ticket(String ticketID, long end){
+    public Ticket(String ticketID){
         this.ticketID = ticketID;
         this.price = 0.0;
-        this.end = end;
-
     }
     @Override
     public double getPrice() {
@@ -21,5 +19,8 @@ public class Ticket implements TicketIF{
     }
     public long getEnd(){
         return this.end;
+    }
+    public void setEnd(long end){
+        this.end = end;
     }
 }
