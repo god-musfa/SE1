@@ -5,8 +5,10 @@ import java.util.Arrays;
 // ToDo replace 0 by correct values read from this.params
 public class Car implements CarIF {
     String[] params;
+    Ticket t;
     public Car( String[] params ){
         this.params = params;
+        t = new Ticket(this.params[4]);
     }
 
     @Override
@@ -20,8 +22,8 @@ public class Car implements CarIF {
     }
 
     @Override
-    public String getHash() {
-        return null;
+    public Ticket getTicket() {
+        return t;
     }
 
 

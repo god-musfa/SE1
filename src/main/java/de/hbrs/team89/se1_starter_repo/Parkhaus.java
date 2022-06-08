@@ -1,16 +1,20 @@
 package de.hbrs.team89.se1_starter_repo;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Parkhaus implements ParkhausIF,IModelInterface{
 
 
     Car[] cars = new Car[15];
+    List<CarIF> carsList = new ArrayList<>();
     @Override
     public int enter(Car c) {
         for(int i = 0;i!= cars.length;i++){
             if(cars[i] == null){
                 cars[i]= c;
+                carsList.add(c);
                 return i+1;
             }
         }
@@ -36,7 +40,7 @@ public class Parkhaus implements ParkhausIF,IModelInterface{
 
     @Override
     public List<Ticket> getTicket() {
-        return null;
+        return carsList.stream().map(x->x.getTicket()).collect(Collectors.toList());
     }
 
     public Car[] getCars() {

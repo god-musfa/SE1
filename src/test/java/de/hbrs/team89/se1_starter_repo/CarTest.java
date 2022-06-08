@@ -40,6 +40,6 @@ class CarTest {
 
     @Test
     void ticketCreation(){
-        assertEquals("058e845e583d91de30e47b1f49c41411",car.getHash());
+        assertEquals("058e845e583d91de30e47b1f49c41411",car.getTicket().getTicketID());
     }
 }
