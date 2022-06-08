@@ -1,9 +1,9 @@
 package de.hbrs.team89.se1_starter_repo;
 
 public class Ticket implements TicketIF{
-    String ticketID;
-    double price;
-
+    private String ticketID; //TicketID as Hash from Javascript
+    private double price;
+    private long end;
     public Ticket(String ticketID){
         this.ticketID = ticketID;
         this.price = 0.0;
@@ -16,5 +16,8 @@ public class Ticket implements TicketIF{
     @Override
     public String getTicketID() {
         return this.ticketID;
+    }
+    public long getEnd(){
+        return this.end;
     }
 }
