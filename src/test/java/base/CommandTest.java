@@ -70,5 +70,26 @@ public class CommandTest {
         assertFalse(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
         assertFalse(Arrays.asList(ph.getCars()).contains(c3));
 
+        ph.undo();
+
+        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c2));
+        assertFalse(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c2));
+        assertFalse(Arrays.asList(ph.getCars()).contains(c2));
+
     }
+
+    @Test
+    void noUndoAfterLeaveTest(){
+        ph.enter(c1);
+        ph.enter(c2);
+        ph.enter(c3);
+        ArrayList<Enter> x = ph.getEnterCommand();
+        ArrayList<ICommand> y= ph.getCommand();
+
+        ph.leave(c3.nr());
+        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
+        ph.undo();
+        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c2));
+    }
+
 }
