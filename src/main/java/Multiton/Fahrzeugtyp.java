@@ -3,11 +3,11 @@ package Multiton;
 import java.util.HashMap;
 
 public abstract class Fahrzeugtyp {
-    protected static Fahrzeugtyp instance;
     private int flaeche;
 
-
-    public Fahrzeugtyp getFahrzeugtyp() {
-        return instance;
+    protected Fahrzeugtyp(int flache) {
+        this.flaeche = flache;
     }
+
+    public abstract Fahrzeugtyp getFahrzeugtyp();
 }
