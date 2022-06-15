@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class CommandTest {
@@ -60,10 +61,14 @@ public class CommandTest {
         ph.enter(c3);
         ArrayList<Enter> x = ph.getEnterCommand();
         ArrayList<ICommand> y= ph.getCommand();
-        x.get(0).undo();
-        assertFalse(x.contains(c1));
-        assertFalse(y.contains(c1));
-        assertFalse(Arrays.asList(ph.getCars()).contains(c1));
+
+        assertTrue(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
+        assertTrue(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3)); // check if c3 is in Enter and Command Lists
+        ph.undo();
+
+        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
+        assertFalse(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
+        assertFalse(Arrays.asList(ph.getCars()).contains(c3));
 
     }
 }

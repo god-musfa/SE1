@@ -2,6 +2,7 @@ package base;
 
 import command.Enter;
 import command.ICommand;
+import command.Leave;
 import mvc.IModelInterface;
 import mvc.IObserverInterface;
 
@@ -50,6 +51,8 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             }
             if ((cars[i].nr() == nr && cars[i] != null)){
                 cars[i] = null;
+                Leave l = new Leave(this,nr);
+                clist.add(l);
                 this.notifyObservers();
                 return true;
             }
@@ -70,7 +73,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
 
     @Override
     public ArrayList<Enter> getEnterCommand() {
-        return null;
+        return elist;
     }
 
     public Car[] getCars() {
@@ -93,5 +96,8 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
         for (int i = 0; i < m_observers.size(); ++i)
             m_observers.get (i).update();
 
+    }
+    public void undo(){
+        if (elist.size()>0) elist.remove(elist.size()-1).undo();
     }
 }
