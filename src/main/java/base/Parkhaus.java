@@ -53,6 +53,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 cars[i] = null;
                 Leave l = new Leave(this,nr);
                 clist.add(l);
+                elist.remove(elist.stream().filter(x->(x.getCar().nr()==nr)).findFirst().get());
                 this.notifyObservers();
                 return true;
             }
