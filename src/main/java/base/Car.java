@@ -1,13 +1,18 @@
 package base;
 
+import Multiton.Fahrzeugtyp;
+import Multiton.FahrzeugtypHelper;
+
 import java.util.Arrays;
 
 // ToDo replace 0 by correct values read from this.params
 public class Car implements CarIF {
     String[] params;
+    Fahrzeugtyp ft;
     Ticket t;
     public Car( String[] params ){
         this.params = params;
+        ft = FahrzeugtypHelper.getFahrzeug(this.params[5]);
         t = new Ticket(this.params[4], this.params[1]);
     }
 
