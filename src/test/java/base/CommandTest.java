@@ -76,6 +76,7 @@ public class CommandTest {
         assertFalse(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c2));
         assertFalse(Arrays.asList(ph.getCars()).contains(c2));
 
+
     }
 
     @Test
