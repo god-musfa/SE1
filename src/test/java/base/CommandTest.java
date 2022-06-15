@@ -1,5 +1,6 @@
 package base;
 
+import command.Enter;
 import command.ICommand;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class CommandTest {
@@ -49,5 +51,19 @@ public class CommandTest {
         assertEquals(c1,a.get(0).getCar());
         assertEquals(c2,a.get(1).getCar());
         assertEquals(c3,a.get(2).getCar());
+    }
+
+    @Test
+    void undoTest(){
+        ph.enter(c1);
+        ph.enter(c2);
+        ph.enter(c3);
+        ArrayList<Enter> x = ph.getEnterCommand();
+        ArrayList<ICommand> y= ph.getCommand();
+        x.get(0).undo();
+        assertFalse(x.contains(c1));
+        assertFalse(y.contains(c1));
+        assertFalse(Arrays.asList(ph.getCars()).contains(c1));
+
     }
 }

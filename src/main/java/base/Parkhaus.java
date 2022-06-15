@@ -68,6 +68,11 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
         return clist;
     }
 
+    @Override
+    public ArrayList<Enter> getEnterCommand() {
+        return null;
+    }
+
     public Car[] getCars() {
         return cars;
     }

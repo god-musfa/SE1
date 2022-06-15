@@ -1,5 +1,6 @@
 package base;
 
+import command.Enter;
 import command.ICommand;
 
 import java.util.ArrayList;
@@ -16,4 +17,6 @@ public interface ParkhausIF {
     List<TicketIF> getTicket();
 
     ArrayList<ICommand> getCommand();
+
+    ArrayList<Enter> getEnterCommand();
 }
