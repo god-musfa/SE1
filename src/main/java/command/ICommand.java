@@ -1,5 +1,6 @@
 package command;
 
+import base.Car;
 import base.CarIF;
 import base.Parkhaus;
 
@@ -17,7 +18,8 @@ public abstract class ICommand {
         ph = p;
         this.nr = nr;
     }
-    public void undo(){
 
+    public CarIF getCar(){
+        return c;
     }
 }

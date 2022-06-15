@@ -1,5 +1,7 @@
 package base;
 
+import command.Enter;
+import command.ICommand;
 import mvc.IModelInterface;
 import mvc.IObserverInterface;
 
@@ -10,6 +12,9 @@ import java.util.stream.Collectors;
 public class Parkhaus implements ParkhausIF, IModelInterface {
 
     private ArrayList<IObserverInterface> m_observers = new ArrayList<IObserverInterface>();
+
+    private ArrayList<ICommand> clist = new ArrayList<>();
+    private ArrayList<Enter> elist = new ArrayList<>();
 
 
     Car[] cars = new Car[15];
@@ -51,6 +56,11 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     @Override
     public List<TicketIF> getTicket() {
         return carsList.stream().map(x->x.getTicket()).collect(Collectors.toList());
+    }
+
+    @Override
+    public ArrayList<ICommand> getCommand() {
+        return null;
     }
 
     public Car[] getCars() {

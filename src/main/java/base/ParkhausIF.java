@@ -1,5 +1,8 @@
 package base;
 
+import command.ICommand;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public interface ParkhausIF {
@@ -11,4 +14,6 @@ public interface ParkhausIF {
     Car[] getCars();
 
     List<TicketIF> getTicket();
+
+    ArrayList<ICommand> getCommand();
 }
