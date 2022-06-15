@@ -25,6 +25,11 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             if(cars[i] == null){
                 cars[i]= c;
                 carsList.add(c);
+
+                Enter e = new Enter(this,c);
+                clist.add(e);
+                elist.add(e);
+
                 this.notifyObservers();
                 return i+1;
             }
@@ -60,7 +65,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
 
     @Override
     public ArrayList<ICommand> getCommand() {
-        return null;
+        return clist;
     }
 
     public Car[] getCars() {
