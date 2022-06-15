@@ -12,7 +12,6 @@ public class Car implements CarIF {
     Ticket t;
     public Car( String[] params ){
         this.params = params;
-        System.out.println(this.params[8]);
         ft = FahrzeugtypHelper.getFahrzeug(this.params[8]);
         t = new Ticket(this.params[4], this.params[1]);
     }
