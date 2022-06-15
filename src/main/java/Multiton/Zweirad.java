@@ -7,7 +7,7 @@ public class Zweirad extends Fahrzeugtyp {
         instance =  new Zweirad();
     }
 
-    public Fahrzeugtyp getFahrzeugtyp() {
+    public static Fahrzeugtyp getFahrzeugtyp() {
         return instance;
     }
 }

@@ -8,7 +8,7 @@ public class SUV extends Fahrzeugtyp {
         instance =  new SUV();
     }
 
-    public Fahrzeugtyp getFahrzeugtyp() {
+    public static Fahrzeugtyp getFahrzeugtyp() {
         return instance;
     }
 }

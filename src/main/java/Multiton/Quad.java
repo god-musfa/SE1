@@ -7,7 +7,7 @@ public class Quad extends Fahrzeugtyp {
         instance =  new Quad();
     }
 
-    public Fahrzeugtyp getFahrzeugtyp() {
+    public static Fahrzeugtyp getFahrzeugtyp() {
         return instance;
     }
 }

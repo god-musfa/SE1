@@ -9,5 +9,4 @@ public abstract class Fahrzeugtyp {
         this.flaeche = flache;
     }
 
-    public abstract Fahrzeugtyp getFahrzeugtyp();
 }

@@ -7,7 +7,7 @@ public class Pickup extends Fahrzeugtyp {
         instance =  new Pickup();
     }
 
-    public Fahrzeugtyp getFahrzeugtyp() {
+    public static Fahrzeugtyp getFahrzeugtyp() {
         return instance;
     }
 }

@@ -7,7 +7,7 @@ public class Trike extends Fahrzeugtyp {
         instance =  new Trike();
     }
 
-    public Fahrzeugtyp getFahrzeugtyp() {
+    public static Fahrzeugtyp getFahrzeugtyp() {
         return instance;
     }
 }
