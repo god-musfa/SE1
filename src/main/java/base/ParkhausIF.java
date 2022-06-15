@@ -19,4 +19,6 @@ public interface ParkhausIF {
     ArrayList<ICommand> getCommand();
 
     ArrayList<Enter> getEnterCommand();
+
+    void undo();
 }
