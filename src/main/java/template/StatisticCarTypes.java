@@ -20,6 +20,6 @@ public class StatisticCarTypes extends ChartStatistic {
 
     @Override
     public List<String> labelBerechnen(List<CarIF> car) {
-        return car.stream().map(y->y.getType()).distinct().collect(Collectors.toList());
+        return car.stream().map(CarIF::getType).distinct().collect(Collectors.toList());
     }
 }
