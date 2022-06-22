@@ -1,5 +1,5 @@
-package base;
-
+import base.Car;
+import base.Parkhaus;
 import mvc.WeeklyIncomeView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
