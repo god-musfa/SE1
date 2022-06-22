@@ -1,4 +1,4 @@
-package Multiton;
+package multiton;
 
 public class PKW extends Fahrzeugtyp {
     private static Fahrzeugtyp instance = new PKW();

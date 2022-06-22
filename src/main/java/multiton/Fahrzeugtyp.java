@@ -1,6 +1,4 @@
-package Multiton;
-
-import java.util.HashMap;
+package multiton;
 
 public abstract class Fahrzeugtyp {
     private int flaeche;
@@ -10,5 +8,4 @@ public abstract class Fahrzeugtyp {
         this.flaeche = flache;
         this.gebuehrenfaktor = gebuehrenfaktor;
     }
-
 }

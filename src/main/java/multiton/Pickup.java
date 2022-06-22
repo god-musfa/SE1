@@ -1,4 +1,4 @@
-package Multiton;
+package multiton;
 
 public class Pickup extends Fahrzeugtyp {
     private static Fahrzeugtyp instance = new Pickup();

@@ -1,4 +1,4 @@
-package Multiton;
+package multiton;
 
 public class SUV extends Fahrzeugtyp {
     private static Fahrzeugtyp instance =  new SUV();
