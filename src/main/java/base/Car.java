@@ -33,27 +33,6 @@ public class Car implements CarIF {
 
 
     @Override
-    public long begin() {
-        return Long.parseLong(params[1]);
-    }
-
-    @Override
-    public long end() {
-        return 0;
-    }
-
-    @Override
-    public int duration() {
-        return 0;
-    }
-
-    @Override
-    public int price() {
-        return 0;
-    }
-
-
-    @Override
     public String toString(){
         return Arrays.toString( params );
     }
