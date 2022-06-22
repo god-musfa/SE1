@@ -1,5 +1,5 @@
-import base.Ticket;
-import base.TicketIF;
+package base;
+
 import template.StatistikWochenEinnahmen;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
