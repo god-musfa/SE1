@@ -51,6 +51,18 @@ class ParkhausTest {
     }
 
     @Test
+    @DisplayName("Testet ob Autos rausfahren koennen obwohl das Parkhaus leer ist." )
+    void leaveTest2() {
+        assertFalse(ph.leave(1));
+    }
+    @Test
+    @DisplayName("Testet ob Autos rausfahren koennen obwohl sie nicht im Parkhaus sind." )
+    void leaveTest3() {
+        ph.enter(c1);
+        assertFalse(ph.leave(2));
+    }
+
+    @Test
     @DisplayName("Prueft ob Autos an erwarteter Position eingefuegt werden")
     void leaveEnterTest() {
         ph.enter(c1);
