@@ -1,9 +1,9 @@
-package Multiton;
+package multiton;
 
 import java.util.HashMap;
 
 public class FahrzeugtypHelper {
-    private static HashMap<String, Fahrzeugtyp> ftyp = new HashMap<>(){
+    private static HashMap<String, Fahrzeugtyp> ftyp = new HashMap<String, Fahrzeugtyp>(){
         {
             put("Zweirad",Zweirad.getFahrzeugtyp());
             put("Trike",Trike.getFahrzeugtyp());

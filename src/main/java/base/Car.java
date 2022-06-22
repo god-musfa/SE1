@@ -1,7 +1,7 @@
 package base;
 
-import Multiton.Fahrzeugtyp;
-import Multiton.FahrzeugtypHelper;
+import multiton.Fahrzeugtyp;
+import multiton.FahrzeugtypHelper;
 
 import java.util.Arrays;
 
