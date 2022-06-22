@@ -1,5 +1,5 @@
-import base.Car;
-import base.CarIF;
+package base;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
