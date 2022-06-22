@@ -1,3 +1,5 @@
+package base;
+
 import template.StatisticCarTypes;
 import jakarta.json.Json;
 import org.junit.jupiter.api.BeforeEach;
