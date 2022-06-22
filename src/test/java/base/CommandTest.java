@@ -1,6 +1,5 @@
-import base.Car;
-import base.Parkhaus;
-import base.ParkhausIF;
+package base;
+
 import command.Enter;
 import command.ICommand;
 import org.junit.jupiter.api.AfterEach;
