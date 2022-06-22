@@ -19,26 +19,6 @@ class CarTest {
     }
 
     @Test
-    void begin() {
-        fail("not yet implemented");
-    }
-
-    @Test
-    void end() {
-        fail("not yet implemented");
-    }
-
-    @Test
-    void duration() {
-        fail("not yet implemented");
-    }
-
-    @Test
-    void price() {
-        fail("not yet implemented");
-    }
-
-    @Test
     void ticketCreation(){
         assertEquals("058e845e583d91de30e47b1f49c41411",car.getTicket().getTicketID());
     }
