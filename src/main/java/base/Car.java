@@ -18,8 +18,8 @@ public class Car implements CarIF {
 
     @Override
     public int nr() {
-        int x = Integer.parseInt(params[0]);
-        return x;
+        return Integer.parseInt(params[0]);
+        
     }
 
     public String getType(){

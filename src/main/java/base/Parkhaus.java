@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class Parkhaus implements ParkhausIF, IModelInterface {
 
-    private ArrayList<IObserverInterface> m_observers = new ArrayList<IObserverInterface>();
+    private ArrayList<IObserverInterface> mobservers = new ArrayList<IObserverInterface>();
 
     private ArrayList<ICommand> clist = new ArrayList<>();
     private ArrayList<Enter> elist = new ArrayList<>();
@@ -91,19 +91,19 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
 
     @Override
     public void registerObserver(IObserverInterface o) {
-        m_observers.add (o);
+        mobservers.add (o);
     }
 
     @Override
     public void removeObserver(IObserverInterface o) {
-        if (m_observers.contains (o))
-            m_observers.remove (o);
+        if (mobservers.contains (o))
+            mobservers.remove (o);
     }
 
     @Override
     public void notifyObservers() {
-        for (int i = 0; i < m_observers.size(); ++i)
-            m_observers.get (i).update();
+        for (int i = 0; i < mobservers.size(); ++i)
+            mobservers.get (i).update();
 
     }
     public void undo(){
