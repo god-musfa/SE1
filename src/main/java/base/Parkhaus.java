@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class Parkhaus implements ParkhausIF, IModelInterface {
 
-    private ArrayList<IObserverInterface> mobservers = new ArrayList<IObserverInterface>();
+    private ArrayList<IObserverInterface> mobservers = new ArrayList<>();
 
     private ArrayList<ICommand> clist = new ArrayList<>();
     private ArrayList<Enter> elist = new ArrayList<>();
