@@ -105,7 +105,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             mobservers.remove (o);
     }
 
-    public ArrayList<IObserverInterface> getObservers(){
+    public List<IObserverInterface> getObservers(){
         return mobservers;
     }
 
