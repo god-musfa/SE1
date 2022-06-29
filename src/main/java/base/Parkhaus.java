@@ -19,14 +19,14 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     private ArrayList<Enter> elist = new ArrayList<>();
 
 
-    Car[] cars;
+    CarIF[] cars;
     List<CarIF> carsList = new ArrayList<>();
 
     public Parkhaus(int size){
         cars = new Car[size];
     }
     @Override
-    public int enter(Car c) {
+    public int enter(CarIF c) {
         for(int i = 0;i!= cars.length;i++){
             if(cars[i] == null){
                 cars[i]= c;
@@ -85,7 +85,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
         return elist;
     }
 
-    public Car[] getCars() {
+    public CarIF[] getCars() {
         return cars;
     }
 
@@ -113,8 +113,8 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
         return cars.length;
     }
     public void changeMax(int newSize){ //ToDo size groesser machen error
-        Car[] temp = cars;
-        Car[] newCars = new Car[newSize];
+        CarIF[] temp = cars;
+        CarIF[] newCars = new Car[newSize];
         for (int i = 0; i < newCars.length ; i++){
             newCars[i] = cars[i];
         }

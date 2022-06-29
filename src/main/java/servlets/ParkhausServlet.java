@@ -103,7 +103,7 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 // System.out.println( "enter," + newCar );
 
                 // re-direct car to another parking lot
-                out.println( locator( newCar ) );
+                out.println( parkhaus.enter(newCar) );
                 gesamtAutos++;
                 break;
             case "leave":

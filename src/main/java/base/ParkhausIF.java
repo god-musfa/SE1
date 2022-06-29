@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface ParkhausIF {
 
-    int enter(Car c);
+    int enter(CarIF c);
 
     boolean leave(int nr);
 
-    Car[] getCars();
+    CarIF[] getCars();
 
     List<TicketIF> getTicket();
 
