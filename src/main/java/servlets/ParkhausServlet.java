@@ -24,6 +24,7 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
     abstract int MAX(); // maximum number of parking slots of a single parking level
     abstract String config(); // configuration of a single parking level
 
+    int maxAutos;
     int anzAutos = 0;
     int gesamtAutos = 0;
     double sumDuration = 0;
@@ -131,6 +132,9 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 out.println( getServletConfig().getServletContext().getServerInfo()
                         + getServletConfig().getServletContext().getMajorVersion()
                         + getServletConfig().getServletContext().getMinorVersion() );
+                break;
+            case "change_max":
+                this.maxAutos = Integer.parseInt(restParams[0]);
                 break;
             default:
                 System.out.println( body );

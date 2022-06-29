@@ -14,11 +14,14 @@ public class Level1Servlet extends ParkhausServlet {
 
     @Override
     int MAX(){ // maximum number of parking slots on level 1
-        return 11;
+        return this.maxAutos;
     }
 
     @Override
     String config(){
+        if (this.maxAutos == 0){
+            maxAutos = 10;
+        }
         this.parkhaus = new Parkhaus(this.MAX());
         return this.MAX()+",6,24,100,1"; // inital config
         // Config Format is "Max, open_from, open_to, delay, simulation_speed"
