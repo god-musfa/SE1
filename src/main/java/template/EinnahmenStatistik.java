@@ -15,6 +15,6 @@ public abstract class EinnahmenStatistik implements EinnahmenStatistikIF {
     @Override
     public long setLetztesAusgefahrenesTicket(List<TicketIF> tickets){
         return tickets.stream().mapToLong(TicketIF::getEnd).max().orElse(-1);
-    };
-    
+    }
+
 }
