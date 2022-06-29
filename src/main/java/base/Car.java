@@ -27,6 +27,11 @@ public class Car implements CarIF {
     }
 
     @Override
+    public String getKundentyp() {
+        return params[7];
+    }
+
+    @Override
     public Ticket getTicket() {
         return t;
     }
