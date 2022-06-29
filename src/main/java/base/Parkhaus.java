@@ -55,7 +55,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 continue;
             }
             if ((cars[i].nr() == nr && cars[i] != null)){
-                cars[i] = null;
+                cars[i] = null; //ToDo: Change price in cars list
                 Leave l = new Leave(this,nr);
                 clist.add(l);
                 Optional<Enter> o = elist.stream().filter(x->(x.getCar().nr()==nr)).findFirst();
