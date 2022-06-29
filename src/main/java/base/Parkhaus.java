@@ -112,7 +112,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     public int getParkplatzSize(){
         return cars.length;
     }
-    public void changeMax(int newSize){
+    public void changeMax(int newSize){ //ToDo size groesser machen error
         Car[] temp = cars;
         Car[] newCars = new Car[newSize];
         for (int i = 0; i < newCars.length ; i++){
