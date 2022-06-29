@@ -9,6 +9,7 @@ import java.io.*;
 import java.util.*;
 
 import base.Parkhaus;
+import helper.ButtonCalc;
 import template.StatisticCarTypes;
 import base.Car;
 import base.CarIF;
@@ -23,11 +24,6 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
     abstract String NAME(); // each ParkhausServlet should have a name, e.g. "Level1"
     abstract int MAX(); // maximum number of parking slots of a single parking level
     abstract String config(); // configuration of a single parking level
-
-    int anzAutos = 0;
-    int gesamtAutos = 0;
-    double sumDuration = 0;
-
     Parkhaus parkhaus;
     /**
      * HTTP GET
@@ -45,19 +41,17 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 out.println( config() );
                 break;
             case "sum":
-                out.println(String.format("%.2f€",getSum()/100 ));
+                out.println(ButtonCalc.calcSum(parkhaus.getCarsList()));
                 break;
             case "avg":
-                out.println((getSum()/100)/anzAutos);
-                out.println((sumDuration/1000)/anzAutos);
+                out.println(ButtonCalc.calcAvgPrice(parkhaus.getCarsList()));
+                out.println(ButtonCalc.calcAvgDuration(parkhaus.getCarsList()));
                 break;
             case "min":
-                // ToDo: insert algorithm for calculating min here
-                out.println( "min = server side calculated min" );
+                out.println(ButtonCalc.calcMin(parkhaus.getCarsList()));
                 break;
             case "max":
-                // ToDo: insert algorithm for calculating max here
-                out.println( "max = server side calculated max" );
+                out.println(ButtonCalc.calcMax(parkhaus.getCarsList()));
                 break;
             case "cars":
                 // TODO: Send list of cars stored on the server to the client.
@@ -73,7 +67,7 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 out.println(sct.statistikErstellen(cars()));
                 break;
             case "Gesamtanzahl Autos":
-                out.println(gesamtAutos);
+                out.println(""); //@toDo Implementieren
 
                 break;
             default:
@@ -132,11 +126,6 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
         }
 
     }
-    Double getSum(){
-        Double sum = (Double)getContext().getAttribute("sum"+NAME());
-        return sum == null ?  0.0d : sum;
-    }
-    // auxiliary methods used in HTTP request processing
 
     /**
      * @return the servlet context
