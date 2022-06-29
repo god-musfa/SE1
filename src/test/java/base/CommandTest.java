@@ -42,6 +42,7 @@ public class CommandTest {
         c2 = null;
         c3 = null;
     }
+    @DisplayName("Überprüft ob Commands in richtiger Reihenfolge eingefügt werden")
     @Test
     void commandTest(){
         ph.enter(c1);
@@ -54,6 +55,7 @@ public class CommandTest {
         assertEquals(c3,a.get(2).getCar());
     }
 
+    @DisplayName("Undo Methode wird geprüft")
     @Test
     void undoTest(){
         ph.enter(c1);
@@ -78,7 +80,7 @@ public class CommandTest {
 
 
     }
-
+    @DisplayName("Undo Methode darf keine Wirksamkeit bei rausgefahrenen Autos haben")
     @Test
     void noUndoAfterLeaveTest(){
         ph.enter(c1);
