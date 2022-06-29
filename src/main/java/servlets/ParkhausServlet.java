@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.*;
 
+import base.Parkhaus;
 import template.StatisticCarTypes;
 import base.Car;
 import base.CarIF;
@@ -26,6 +27,8 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
     int anzAutos = 0;
     int gesamtAutos = 0;
     double sumDuration = 0;
+
+    Parkhaus parkhaus;
     /**
      * HTTP GET
      */
