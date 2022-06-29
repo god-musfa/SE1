@@ -4,7 +4,7 @@ public class Ticket implements TicketIF{
     private String ticketID; //TicketID as Hash from Javascript
     private double price;
     private long begin; //ToDo getter (+Test) einfuegen oder entfernen
-    private long end;
+    private Long end;
     public Ticket(String ticketID, String begin){
         this.ticketID = ticketID;
         this.price = 0.0;
@@ -24,10 +24,16 @@ public class Ticket implements TicketIF{
     public String getTicketID() {
         return this.ticketID;
     }
-    public long getEnd(){
+    public Long getEnd(){
         return this.end;
     }
     public void setEnd(long end){
         this.end = end;
+    }
+
+    @Override
+    public long duration() {
+        if(end != null) { return end-begin;}
+        return -1;
     }
 }
