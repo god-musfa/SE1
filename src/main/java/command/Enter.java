@@ -16,7 +16,7 @@ public class Enter extends ICommand {
     public void undo() {
         Optional<ICommand> o = ph.getCommand().stream().filter(x->x.getCar().equals(c)).findFirst();
         if(o.isPresent()) {
-            ph.getCommand().remove(ph.getCommand().stream().filter(x -> x.getCar().equals(c)).findFirst().get());
+            ph.getCommand().remove(o.get());
             for(int i = 0; i!=ph.getCars().length;i++){
                 if(c.equals(ph.getCars()[i])) ph.getCars()[i] = null;
             }

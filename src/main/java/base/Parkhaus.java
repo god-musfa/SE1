@@ -56,7 +56,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 clist.add(l);
                 Optional<Enter> o = elist.stream().filter(x->(x.getCar().nr()==nr)).findFirst();
                 if(o.isPresent()) {
-                    elist.remove(elist.stream().filter(x -> (x.getCar().nr() == nr)).findFirst().get());
+                    elist.remove(o.get());
                 }
                 this.notifyObservers();
                 return true;
