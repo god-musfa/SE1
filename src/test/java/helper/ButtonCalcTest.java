@@ -60,5 +60,12 @@ class ButtonCalcTest {
         assertEquals(2.0, ButtonCalc.calcMin(carsList));
     }
 
+    @Test
+    @DisplayName("Checks whether the average paid Price is returned")
+    void calcAvgPrice() {
+        assertEquals(5.67, ButtonCalc.calcAvgPrice(carsList));
+    }
+
+
     //@toDo Test falls ein leeres Objekt uebergeben wird hinzufuegen
 }

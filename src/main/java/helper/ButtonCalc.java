@@ -30,4 +30,18 @@ public class ButtonCalc {
                 .min().orElse(0.0);
     }
 
+    public static double calcAvgPrice(List<CarIF> carsList) {
+        double sum = carsList.stream()
+                .filter(x -> !x.getKundentyp().equals("Abonnent"))
+                .map(CarIF::getTicket)
+                .map(TicketIF::getPrice)
+                .mapToDouble(price -> price)
+                .sum();
+        double number = carsList.stream()
+                .filter(x -> !x.getKundentyp().equals("Abonnent"))
+                .count();
+        return (double) Math.round((sum/number) * 100) / 100;
+    }
+
+    //@toDo add Method for AverageTime (sonderfall fuer Abonnenten faellt weg)
 }
