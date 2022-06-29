@@ -21,4 +21,5 @@ public interface ParkhausIF {
     ArrayList<Enter> getEnterCommand();
 
     void undo();
+    List<CarIF> getCarsList();
 }

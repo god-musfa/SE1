@@ -85,6 +85,11 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
         return elist;
     }
 
+    @Override
+    public List<CarIF> getCarsList() {
+        return carsList;
+    }
+
     public CarIF[] getCars() {
         return cars;
     }
