@@ -22,7 +22,6 @@ public class Level1Servlet extends ParkhausServlet {
         this.parkhaus = new Parkhaus(this.MAX());
         return this.MAX()+",6,24,100,1"; // inital config
         // Config Format is "Max, open_from, open_to, delay, simulation_speed"
-        // e.g. return this.MAX() + ",5,23,100,10";  // TODO replace by your own parameters
     }
 
 
