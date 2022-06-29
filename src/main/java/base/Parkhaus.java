@@ -72,7 +72,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
 
     @Override
     public List<TicketIF> getTicket() {
-        return carsList.stream().map(x->x.getTicket()).collect(Collectors.toList());
+        return carsList.stream().map(CarIF::getTicket).collect(Collectors.toList());
     }
 
     @Override
@@ -107,6 +107,6 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
 
     }
     public void undo(){
-        if (elist.size()>0) elist.remove(elist.size()-1).undo();
+        if (!elist.isEmpty()) elist.remove(elist.size()-1).undo();
     }
 }

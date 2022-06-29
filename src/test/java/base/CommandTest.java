@@ -62,18 +62,18 @@ public class CommandTest {
         ArrayList<Enter> x = ph.getEnterCommand();
         ArrayList<ICommand> y= ph.getCommand();
 
-        assertTrue(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
-        assertTrue(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3)); // check if c3 is in Enter and Command Lists
+        assertTrue(x.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c3));
+        assertTrue(y.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c3)); // check if c3 is in Enter and Command Lists
         ph.undo();
 
-        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
-        assertFalse(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
+        assertFalse(x.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c3));
+        assertFalse(y.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c3));
         assertFalse(Arrays.asList(ph.getCars()).contains(c3));
 
         ph.undo();
 
-        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c2));
-        assertFalse(y.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c2));
+        assertFalse(x.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c2));
+        assertFalse(y.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c2));
         assertFalse(Arrays.asList(ph.getCars()).contains(c2));
 
 
@@ -88,9 +88,9 @@ public class CommandTest {
         ArrayList<ICommand> y= ph.getCommand();
 
         ph.leave(c3.nr());
-        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c3));
+        assertFalse(x.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c3));
         ph.undo();
-        assertFalse(x.stream().map(z->z.getCar()).collect(Collectors.toList()).contains(c2));
+        assertFalse(x.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c2));
     }
 
 }

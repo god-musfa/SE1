@@ -3,23 +3,23 @@ package mvc;
 import base.Car;
 
 public class DailyIncomeController implements IControllerInterface{
-    private IModelInterface m_model;
-    private DailyIncomeView m_tableView;
+    private IModelInterface mModel;
+    private DailyIncomeView mTableView;
     public DailyIncomeController (IModelInterface model,
                                 DailyIncomeView tableView)
     {
-        m_tableView = tableView;
-        m_model = model;
+        mTableView = tableView;
+        mModel = model;
     }
 
 
     @Override
     public void enter(Car c) {
-        m_model.enter(c);
+        mModel.enter(c);
     }
 
     @Override
     public void leave(int i) {
-        m_model.leave(i);
+        mModel.leave(i);
     }
 }

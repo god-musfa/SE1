@@ -4,25 +4,25 @@ import base.Car;
 import template.StatistikTagesEinnahmen;
 
 public class WeeklyIncomeView implements IObserverInterface {
-    private IControllerInterface p_controller;
-    private IModelInterface p_model;
+    private IControllerInterface pController;
+    private IModelInterface pModel;
     private double income = 0;
     private StatistikTagesEinnahmen s = new StatistikTagesEinnahmen();
     public WeeklyIncomeView(IModelInterface model){
-        p_model = model;
+        pModel = model;
         model.registerObserver (this);
-        p_controller = new WeeklyIncomeController(model, this);
+        pController = new WeeklyIncomeController(model, this);
     }
 
     public void enterCar(Car c){
-        p_controller.enter(c);
+        pController.enter(c);
     }
     public void leave(int i){
-        p_controller.leave(i);
+        pController.leave(i);
     }
     @Override
     public void update() {
-        income = s.statistikErstellen(p_model.getTicket());
+        income = s.statistikErstellen(pModel.getTicket());
     }
     public double getWeeklyIncome(){
         return income;
