@@ -18,7 +18,7 @@ class WeeklyIncomeViewTest {
     String[] st3;
     @BeforeEach
     void setUp() {
-        ph = new Parkhaus();
+        ph = new Parkhaus(15);
         wi =new WeeklyIncomeView(ph);
         st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","dfds","sadas"};
         st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","sddd","gmgj"};

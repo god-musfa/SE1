@@ -19,8 +19,12 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     private ArrayList<Enter> elist = new ArrayList<>();
 
 
-    Car[] cars = new Car[15];
+    Car[] cars;
     List<CarIF> carsList = new ArrayList<>();
+
+    public Parkhaus(int size){
+        cars = new Car[size];
+    }
     @Override
     public int enter(Car c) {
         for(int i = 0;i!= cars.length;i++){
