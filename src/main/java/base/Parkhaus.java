@@ -8,6 +8,7 @@ import mvc.IObserverInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Parkhaus implements ParkhausIF, IModelInterface {
@@ -53,7 +54,10 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 cars[i] = null;
                 Leave l = new Leave(this,nr);
                 clist.add(l);
-                elist.remove(elist.stream().filter(x->(x.getCar().nr()==nr)).findFirst().get());
+                Optional<Enter> o = elist.stream().filter(x->(x.getCar().nr()==nr)).findFirst();
+                if(o.isPresent()) {
+                    elist.remove(elist.stream().filter(x -> (x.getCar().nr() == nr)).findFirst().get());
+                }
                 this.notifyObservers();
                 return true;
             }
