@@ -3,6 +3,7 @@ package base;
 import mvc.WeeklyIncomeView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,6 +44,22 @@ class WeeklyIncomeViewTest {
         assertEquals(400.00,wi.getWeeklyIncome());
 
     }
+
+    @Test
+    @DisplayName("Testet die removeObserver Methode")
+    void removeObserverTest(){
+        wi.enterCar(c1);
+        wi.enterCar(c2);
+        wi.enterCar(c3);
+
+        assertFalse(ph.getObservers().isEmpty());
+        ph.removeObserver(wi);
+        assertTrue(ph.getObservers().isEmpty());
+
+    }
+
+
+
 
 
 
