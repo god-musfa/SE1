@@ -104,25 +104,16 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
 
                 // re-direct car to another parking lot
                 out.println( parkhaus.enter(newCar) );
-                gesamtAutos++;
+                System.out.println(parkhaus.getCars());
                 break;
             case "leave":
-                CarIF oldCar = cars().get(0);  // ToDo remove car from list
-                anzAutos ++;
-                sumDuration += Double.parseDouble(params[3]);
-                double price = 0.0d;
-                if ( params.length > 4 ){
-                    String priceString = params[4];
-                    if ( ! "_".equals( priceString ) ){
-                        price = (double)new Scanner( priceString ).useDelimiter("\\D+").nextInt();
-                        price /= 100.0d;  // just as Integer.parseInt( priceString ) / 100.0d;
-                        price = Math.round(price*100)/100; //rounding so we have nice numbers
-                        // store new sum in ServletContext
-                        getContext().setAttribute("sum"+NAME(), getSum() + price );
-                    }
-                }
-                out.println( price );  // server calculated price
-                System.out.println( "leave," + oldCar + ", price = " + price );
+
+                System.out.println(parkhaus.getCars());// ToDo remove car from list
+
+
+
+                out.println( parkhaus.leave(Integer.parseInt(params[1])));  // server calculated price
+                //System.out.println( "leave," + oldCar + ", price = " + price );
                 break;
             case "invalid": case "occupied":
                 System.out.println( body );

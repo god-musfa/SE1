@@ -45,10 +45,10 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     }
 
     @Override
-    public boolean leave(int nr) { //ToDo Rueckgabewert noch aendern
+    public double leave(int nr) {
         if (cars == null) {
             this.notifyObservers();
-            return false;
+            return -1.0;
         }
         for(int i=0; i!=cars.length;i++){
             if(cars[i]==null){
@@ -63,11 +63,11 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                     elist.remove(o.get());
                 }
                 this.notifyObservers();
-                return true;
+                return 5.00;
             }
         }
         this.notifyObservers();
-        return false;
+        return -1.00;
     }
 
     @Override
@@ -129,4 +129,6 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
         }
         cars = newCars;
     }
+
+
 }

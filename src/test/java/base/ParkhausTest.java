@@ -43,22 +43,22 @@ class ParkhausTest {
         ph.enter(c1);
         ph.enter(c2);
         ph.enter(c3);
-        assertTrue(ph.leave(1));
-        assertTrue(ph.leave(2));
-        assertTrue(ph.leave(3));
-        assertFalse(ph.leave(4));
+        assertEquals(5.00,ph.leave(1));
+        assertEquals(5.00,ph.leave(2));
+        assertEquals(5.00,ph.leave(3));
+        assertEquals(-1.00,ph.leave(4));
     }
 
     @Test
     @DisplayName("Testet ob Autos rausfahren koennen obwohl das Parkhaus leer ist." )
     void leaveTest2() {
-        assertFalse(ph.leave(1));
+        assertEquals(-1.00,ph.leave(1));
     }
     @Test
     @DisplayName("Testet ob Autos rausfahren koennen obwohl sie nicht im Parkhaus sind." )
     void leaveTest3() {
         ph.enter(c1);
-        assertFalse(ph.leave(2));
+        assertEquals(-1.00,ph.leave(2));
     }
 
     @Test
