@@ -109,4 +109,15 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     public void undo(){
         if (!elist.isEmpty()) elist.remove(elist.size()-1).undo();
     }
+    public int getParkplatzSize(){
+        return cars.length;
+    }
+    public void changeMax(int newSize){
+        Car[] temp = cars;
+        Car[] newCars = new Car[newSize];
+        for (int i = 0; i < newCars.length ; i++){
+            newCars[i] = cars[i];
+        }
+        cars = newCars;
+    }
 }
