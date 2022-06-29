@@ -31,10 +31,21 @@ public class ButtonCalc {
     }
 
     public static double calcAvgPrice(List<CarIF> carsList) {
-        double number = carsList.stream()
+        return (double) Math.round((calcSum(carsList)/calcAnzahl(carsList)) * 100) / 100;
+    }
+
+    public static double calcAvgDuration(List<CarIF> carsList) {
+        long sumDur = carsList.stream()
                 .filter(x -> !x.getKundentyp().equals("Abonnent"))
-                .count();
-        return (double) Math.round((calcSum(carsList)/number) * 100) / 100;
+                .map(CarIF::getTicket)
+                .map(TicketIF::duration)
+                .mapToLong(duration -> duration)
+                .sum();
+        return (double) Math.round((sumDur/calcAnzahl(carsList)) * 100) / 100;
+    }
+
+    private static double calcAnzahl(List<CarIF> carsList) {
+        return carsList.stream().filter(x -> !x.getKundentyp().equals("Abonnent")).filter(x -> x.getTicket().getEnd() != null).count();
     }
 
     public static double calcSum(List<CarIF> carsList) {
@@ -45,6 +56,4 @@ public class ButtonCalc {
                 .mapToDouble(price -> price)
                 .sum();
     }
-
-    //@toDo add Method for AverageTime (sonderfall fuer Abonnenten faellt weg)
 }

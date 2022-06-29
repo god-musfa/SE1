@@ -18,16 +18,22 @@ class ButtonCalcTest {
     void setUp() {
         carsList = new ArrayList<>();
         CarIF[] c = new Car[] {
-                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"}),
-                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"}),
-                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"})
+                new Car(new String[] {"6","1651072643100","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"}),
+                new Car(new String[] {"6","1651072643100","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"}),
+                new Car(new String[] {"6","1651072643100","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"}),
+                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Abonnent","SUV","SU-Z 15"})
         };
         c[0].getTicket().setPrice(2);
         c[1].getTicket().setPrice(10);
         c[2].getTicket().setPrice(5);
+        c[3].getTicket().setPrice(1);
+        c[0].getTicket().setEnd(Long.parseLong("1651072643200"));
+        c[1].getTicket().setEnd(Long.parseLong("1651072643100"));
+        c[2].getTicket().setEnd(Long.parseLong("1651072643250"));
         carsList.add(c[0]);
         carsList.add(c[1]);
         carsList.add(c[2]);
+        carsList.add(c[3]);
     }
 
     @Test
@@ -37,26 +43,8 @@ class ButtonCalcTest {
     }
 
     @Test
-    @DisplayName("Checks whether subscribers are not considered as planned (for calcMax)")
-    void calcMax_subscriber() {
-        CarIF c = new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Abonnent","SUV","SU-Z 15"});
-        c.getTicket().setPrice(20000);
-        carsList.add(c);
-        assertEquals(10.0, ButtonCalc.calcMax(carsList));
-    }
-
-    @Test
     @DisplayName("Checks whether the cheapest amount paid is returned")
     void calcMin() {
-        assertEquals(2.0, ButtonCalc.calcMin(carsList));
-    }
-
-    @Test
-    @DisplayName("Checks whether subscribers are not considered as planned (for calcMin)")
-    void calcMin_subscriber() {
-        CarIF c = new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Abonnent","SUV","SU-Z 15"});
-        c.getTicket().setPrice(1);
-        carsList.add(c);
         assertEquals(2.0, ButtonCalc.calcMin(carsList));
     }
 
@@ -70,6 +58,12 @@ class ButtonCalcTest {
     @DisplayName("Checks whether the sum is returned")
     void calcSum() {
         assertEquals(17.0, ButtonCalc.calcSum(carsList));
+    }
+
+    @Test
+    @DisplayName("Checks whether the average Duration is returned")
+    void calcAvgDuration() {
+        assertEquals(83.33, ButtonCalc.calcAvgDuration(carsList));
     }
 
     //@toDo Test falls ein leeres Objekt uebergeben wird hinzufuegen
