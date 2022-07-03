@@ -4,30 +4,31 @@ import base.CarIF;
 import base.TicketIF;
 
 import java.util.List;
+import java.util.stream.DoubleStream;
 
 /**
  * Calculation class for buttons in the servlet
  */
 public class ButtonCalc {
+    private static final String ignoreCT = "Abonnent"; //ignoreCustomerType: Customer type that should not be included in the calculation
+
+    private ButtonCalc() {
+        //ButtonCalc is a Utility class
+    }
 
     public static double calcMax(List<CarIF> carsList) {
-        return carsList.stream()
-                .filter(x -> !x.getKundentyp().equals("Abonnent"))
-                .map(CarIF::getTicket)
-                .map(TicketIF::getPrice)
-                .filter(price -> price > 0.0)
-                .mapToDouble(price -> price)
+        return calcPriceStream(carsList).filter(price -> price > 0.0)
                 .max().orElse(0.0);
     }
 
     public static double calcMin(List<CarIF> carsList) {
-        return carsList.stream()
-                .filter(x -> !x.getKundentyp().equals("Abonnent"))
-                .map(CarIF::getTicket)
-                .map(TicketIF::getPrice)
+        return calcPriceStream(carsList)
                 .filter(price -> price > 0.0)
-                .mapToDouble(price -> price)
                 .min().orElse(0.0);
+    }
+
+    public static double calcSum(List<CarIF> carsList) {
+        return calcPriceStream(carsList).sum();
     }
 
     public static double calcAvgPrice(List<CarIF> carsList) {
@@ -36,7 +37,7 @@ public class ButtonCalc {
 
     public static double calcAvgDuration(List<CarIF> carsList) {
         long sumDur = carsList.stream()
-                .filter(x -> !x.getKundentyp().equals("Abonnent"))
+                .filter(x -> !x.getKundentyp().equals(ignoreCT))
                 .map(CarIF::getTicket)
                 .map(TicketIF::duration)
                 .mapToLong(duration -> duration)
@@ -45,15 +46,15 @@ public class ButtonCalc {
     }
 
     private static double calcAnzahl(List<CarIF> carsList) {
-        return carsList.stream().filter(x -> !x.getKundentyp().equals("Abonnent")).filter(x -> x.getTicket().getEnd() != null).count();
+        return carsList.stream().filter(x -> !x.getKundentyp().equals(ignoreCT)).filter(x -> x.getTicket().getEnd() != null).count();
     }
 
-    public static double calcSum(List<CarIF> carsList) {
+    private static DoubleStream calcPriceStream(List<CarIF> carsList) {
         return carsList.stream()
-                .filter(x -> !x.getKundentyp().equals("Abonnent"))
+                .filter(x -> !x.getKundentyp().equals(ignoreCT))
                 .map(CarIF::getTicket)
                 .map(TicketIF::getPrice)
-                .mapToDouble(price -> price)
-                .sum();
+                .mapToDouble(price -> price);
     }
+
 }

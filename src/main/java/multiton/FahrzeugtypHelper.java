@@ -15,7 +15,7 @@ public class FahrzeugtypHelper {
     }
 
     private FahrzeugtypHelper() {
-        throw new IllegalStateException("FahrzeugtypHelper is a Utitlity class");
+        throw new IllegalStateException("FahrzeugtypHelper is a Utility class");
     }
 
     /**
