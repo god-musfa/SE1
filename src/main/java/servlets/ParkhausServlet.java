@@ -96,19 +96,11 @@ public abstract class ParkhausServlet extends HttpServlet {
                 CarIF newCar = new Car( restParams );
                 cars().add( newCar );
                 // System.out.println( "enter," + newCar );
-
                 // re-direct car to another parking lot
                 out.println( parkhaus.enter(newCar) );
-                System.out.println(parkhaus.getCars());
                 break;
             case "leave":
-
-                System.out.println(parkhaus.getCars());
-
-
-
                 out.println( parkhaus.leave(Integer.parseInt(params[1]),Long.parseLong(params[3])));  // server calculated price
-                //System.out.println( "leave," + oldCar + ", price = " + price );
                 break;
             case "invalid": case "occupied":
                 System.out.println( body );
