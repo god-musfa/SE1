@@ -19,9 +19,9 @@ class ButtonCalcTest {
         carsList = new ArrayList<>();
         CarIF[] c = new Car[] {
                 new Car(new String[] {"6","1651072643200","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"}),
-                new Car(new String[] {"6","1651072643100","_","19","058e845e583d91de30e47b1f49c41412","#7eecf6","1","Frau","SUV","SU-Z 15"}),
-                new Car(new String[] {"6","1651072643250","_","19","058e845e583d91de30e47b1f49c41413","#7eecf7","1","Frau","SUV","SU-Z 15"}),
-                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41414","#7eecf8","1","Abonnent","SUV","SU-Z 15"})
+                new Car(new String[] {"6","1651072643100","_","19","058e845e583d91de30e47b1f49c41412","#7eecf6","1","Frau","SUV","SU-Z 16"}),
+                new Car(new String[] {"6","1651072643250","_","19","058e845e583d91de30e47b1f49c41413","#7eecf7","1","Frau","SUV","SU-Z 17"}),
+                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41414","#7eecf8","1","Abonnent","SUV","SU-Z 18"})
         };
         c[0].getTicket().setPrice(2);
         c[1].getTicket().setPrice(10);
@@ -67,7 +67,7 @@ class ButtonCalcTest {
     }
 
     @Test
-    @DisplayName("Checks the output is the List is empty")
+    @DisplayName("Checks the output if the List is empty")
     void emptyObject() {
         List<CarIF> carsListEmpty = new ArrayList<>();
         assertEquals(0.0, ButtonCalc.calcMax(carsListEmpty));
