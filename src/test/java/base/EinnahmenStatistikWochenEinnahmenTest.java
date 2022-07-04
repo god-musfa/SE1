@@ -23,12 +23,12 @@ class EinnahmenStatistikWochenEinnahmenTest {
         tickets.add(new Ticket("jnigsnlijfsnlkjssssss", "1"));
 
         long unix = 1654704862;
-        tickets.get(0).setEnd(unix);
-        tickets.get(1).setEnd(unix);
-        tickets.get(2).setEnd(unix+86500);
-        tickets.get(3).setEnd(unix+87200);
-        tickets.get(4).setEnd(unix+604800);
-        tickets.get(5).setEnd(unix+692000);
+        tickets.get(0).setDuration(unix);
+        tickets.get(1).setDuration(unix);
+        tickets.get(2).setDuration(unix+86500);
+        tickets.get(3).setDuration(unix+87200);
+        tickets.get(4).setDuration(unix+604800);
+        tickets.get(5).setDuration(unix+692000);
 
 
         tickets.get(0).setPrice(100.0);
