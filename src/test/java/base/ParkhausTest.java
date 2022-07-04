@@ -128,11 +128,8 @@ class ParkhausTest {
     @ValueSource(ints = {0,5,20})
     @DisplayName("Prueft die Veraenderung der maximalen Parkplaetze")
     void changeMaxTest(int w) {
-        assertEquals(w,w);
-        /*
         ph.changeMax(w);
         assertEquals(w, ph.getParkplatzSize());
-         */
     }
 
     @Test
