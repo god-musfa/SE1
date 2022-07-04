@@ -103,7 +103,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "leave":
 
-                System.out.println(parkhaus.getCars());// ToDo remove car from list
+                System.out.println(parkhaus.getCars());
 
 
 
