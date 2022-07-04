@@ -43,15 +43,16 @@ public class Car implements CarIF {
     public String toString(){
         return Arrays.toString( params );
     }
-    public String toStringSeperatedBySlash(){ //needs Test
-        String result = params[0];
+    public String toStringSeperatedBySlash(){ //Todo: needs Test
+        StringBuilder sb = new StringBuilder();
+        sb.append(params[0]);
         for (int i = 1; i < params.length ; i++){
-            result += "/"+params[i];
+            sb.append("/"+params[i]);
         }
-        return result;
+        return sb.toString();
     }
 
-    public void setParkplatzNumber(int n){
+    public void setParkplatzNumber(int n){ //Todo: needs Test
         this.params[6] = ""+n;
     }
 }
