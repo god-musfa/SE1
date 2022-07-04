@@ -22,12 +22,14 @@ class ButtonCalcTest {
                 new Car(new String[] {"6","1651072643200","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"}),
                 new Car(new String[] {"6","1651072643100","_","19","058e845e583d91de30e47b1f49c41412","#7eecf6","1","Frau","SUV","SU-Z 16"}),
                 new Car(new String[] {"6","1651072643250","_","19","058e845e583d91de30e47b1f49c41413","#7eecf7","1","Frau","SUV","SU-Z 17"}),
-                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41414","#7eecf8","1","Abonnent","SUV","SU-Z 18"})
+                new Car(new String[] {"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41414","#7eecf8","1","Abonnent","SUV","SU-Z 18"}),
+                new Car(new String[] {"4","1651072643260","_","19","058e845e583d91de30e47b1f49c41415","#7eecf9","1","Firmenkunde","SUV","SU-Z 19"})
         };
         c[0].getTicket().setPrice(2);
         c[1].getTicket().setPrice(10);
         c[2].getTicket().setPrice(5);
         c[3].getTicket().setPrice(1);
+        c[4].getTicket().setPrice(0);
         c[0].getTicket().setDuration(Long.parseLong("100"));
         c[1].getTicket().setDuration(Long.parseLong("1"));
         c[2].getTicket().setDuration(Long.parseLong("150"));
@@ -35,6 +37,7 @@ class ButtonCalcTest {
         carsList.add(c[1]);
         carsList.add(c[2]);
         carsList.add(c[3]);
+        carsList.add(c[4]);
     }
 
     @Test
@@ -81,6 +84,6 @@ class ButtonCalcTest {
     @Test
     @DisplayName("Checks whether the sum of all Cars counted is returned")
     void calcGesamtAnzahlAutos() {
-        Assert.assertEquals(4,ButtonCalc.calcGesamtAnzahlAutos(carsList));
+        Assert.assertEquals(5,ButtonCalc.calcGesamtAnzahlAutos(carsList));
     }
 }
