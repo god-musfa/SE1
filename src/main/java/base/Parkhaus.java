@@ -161,4 +161,8 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             return "";
         }
     }
+    public void reset(){
+        this.getCarsList().clear();
+        this.cars = new CarIF[cars.length];
+    }
 }

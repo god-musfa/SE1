@@ -24,4 +24,5 @@ public interface ParkhausIF {
     List<CarIF> getCarsList();
     void changeMax(int newSize);
     String carsListToString();
+    void reset();
 }

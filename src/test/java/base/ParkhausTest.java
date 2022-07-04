@@ -149,4 +149,18 @@ class ParkhausTest {
         ph.enter(c2);
         assertEquals(-1,ph.enter(c3));
 
-}}
+}
+
+    @Test
+    void reset() {
+        ph.enter(c1);
+        ph.enter(c2);
+        assertEquals(false,ph.getCarsList().isEmpty());
+        assertNotNull(ph.getCars()[0]);
+
+        ph.reset();
+
+        assertNull(ph.getCars()[0]);
+        assertEquals(true,ph.getCarsList().isEmpty());
+    }
+}
