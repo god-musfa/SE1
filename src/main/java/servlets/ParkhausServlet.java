@@ -54,12 +54,10 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 out.println(ButtonCalc.calcMax(parkhaus.getCarsList()));
                 break;
             case "cars":
-                // TODO: Send list of cars stored on the server to the client.
                 // Cars are separated by comma.
                 // Values of a single car are separated by slash.
                 // Format: Nr, timer begin, duration, price, Ticket, color, space, client category, vehicle type, license (PKW Kennzeichen)
                 // For example:
-                // TODO replace by real list of cars
                 // out.println("1/1648465400000/_/_/Ticket1/#0d1e0a/2/any/PKW/1,2/1648465499999/_/_/Ticket2/#dd10aa/3/any/PKW/2");
                 out.println(parkhaus.CarsListToString());
                 break;
