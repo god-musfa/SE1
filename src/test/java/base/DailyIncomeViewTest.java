@@ -57,5 +57,12 @@ class DailyIncomeViewTest {
         assertTrue(ph.getObservers().isEmpty());
 
     }
+    @Test
+    void removeNonExistentObserver(){
+        wi.enterCar(c1);
+        ph.removeObserver(wi);
+        ph.removeObserver(wi);
+        assertTrue((ph.getObservers().isEmpty()));
+    }
 
 }

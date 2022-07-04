@@ -61,7 +61,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 CarIF car = cars[i];
                 car.getTicket().setPrice(FahrzeugtypHelper.getFahrzeug(car.getVehicleType()), KundentypHelper.getKunde(car.getKundentyp()),duration);
                 double price = car.getTicket().getPrice();
-                cars[i] = null; //ToDo: Change price in cars list
+                cars[i] = null;
                 Leave l = new Leave(this,nr);
                 clist.add(l);
                 Optional<Enter> o = elist.stream().filter(x->(x.getCar().getNr()==nr)).findFirst();
