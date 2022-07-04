@@ -38,6 +38,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 Enter e = new Enter(this,c);
                 clist.add(e);
                 elist.add(e);
+                c.setParkplatzNumber(i+1);
 
                 this.notifyObservers();
                 return i+1;
@@ -147,5 +148,17 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             newCars[i] = this.cars[i];
         }
         return newCars;
+    }
+    public String CarsListToString() {
+        if (this.getCarsList().size() != 0) {
+            String carsString = this.getCarsList().get(0).toStringSeperatedBySlash();
+            for (int i = 1; i < this.getCarsList().size(); i++) {
+                carsString += "," + this.getCarsList().get(i).toStringSeperatedBySlash();
+            }
+            return carsString;
+        }
+        else {
+            return "";
+        }
     }
 }

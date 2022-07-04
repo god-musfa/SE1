@@ -8,4 +8,7 @@ public interface CarIF {
     String getVehicleType();
     String getKundentyp();
     Ticket getTicket();
+    void setParkplatzNumber(int n);
+
+    String toStringSeperatedBySlash();
 }
