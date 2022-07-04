@@ -55,7 +55,7 @@
                          debug="true"
                          name="Etage1"
                          license_max="15"
-                         extra_buttons='["sum","min","avg","Gesamtanzahl Autos"]'
+                         extra_buttons='["reset","sum","min","avg","Gesamtanzahl Autos"]'
                          extra_charts='[{"extra_class":"chart","extra_inner":"","extra_popup_title":""}]'
                          client_categories='["Frau"]'
                          space_color='{"1":"pink"}'

@@ -71,6 +71,8 @@ public abstract class ParkhausServlet extends HttpServlet {
                 out.println(ButtonCalc.calcGesamtAnzahlAutos(parkhaus.getCarsList()));
 
                 break;
+            case "reset":
+                parkhaus.reset();
             default:
                 System.out.println("Invalid Command: " + request.getQueryString());
         }
