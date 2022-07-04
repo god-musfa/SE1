@@ -6,12 +6,13 @@ import multiton.Kundentyp;
 public class Ticket implements TicketIF{
     private String ticketID; //TicketID as Hash from Javascript
     private double price;
-    private long begin;
+    private long begin,duration;
     private Long end;
     public Ticket(String ticketID, String begin){
         this.ticketID = ticketID;
         this.price = 0.0;
         this.begin = Long.parseLong(begin);
+        duration = 0;
     }
     @Override
     public double getPrice() {
@@ -24,6 +25,7 @@ public class Ticket implements TicketIF{
     }
     @Override
     public void setPrice(Fahrzeugtyp ft, Kundentyp kt, long duration){
+        this.duration = duration;
         price = ft.getGebuehrenfaktor()*kt.getGebuehrenfak()*(duration/100);
     }
     @Override
@@ -36,10 +38,12 @@ public class Ticket implements TicketIF{
     public void setEnd(long end){
         this.end = end;
     }
+    public void setDuration(long x){
+        duration = x;
+    }
 
     @Override
     public long duration() {
-        if(end != null) { return end-begin;}
-        return -1;
+        return duration;
     }
 }
