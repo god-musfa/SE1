@@ -133,15 +133,6 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
         return getServletConfig().getServletContext();
     }
 
-    /**
-     * TODO: replace this by your own function
-     * @return the number of the free parking lot to which the next incoming car will be directed
-     */
-    int locator( CarIF car ){
-        // numbers of parking lots start at 1, not zero
-        // return 1;  // always use the first space
-        return 1 + (( cars().size() - 1 ) % this.MAX());
-    }
 
     /**
      * @return the list of all cars stored in the servlet context so far
