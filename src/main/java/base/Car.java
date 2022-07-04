@@ -38,12 +38,17 @@ public class Car implements CarIF {
         return t;
     }
 
+    private void setMissingParams(){
+        params[2] = ""+t.getDuration();
+        params[3] = ""+t.getPrice();
+    }
 
     @Override
     public String toString(){
         return Arrays.toString( params );
     }
     public String toStringSeperatedBySlash(){ //Todo: needs Test
+        this.setMissingParams();
         StringBuilder sb = new StringBuilder();
         sb.append(params[0]);
         for (int i = 1; i < params.length ; i++){

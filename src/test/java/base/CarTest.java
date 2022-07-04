@@ -34,7 +34,7 @@ class CarTest {
 
     @Test
     void toStringSeperatedBySlash() {
-        assertEquals("6/1651072643184/_/19/058e845e583d91de30e47b1f49c41411/#7eecf5/1/Frau/SUV/SU-Z 15",car.toStringSeperatedBySlash());
+        assertEquals("6/1651072643184/0/0.0/058e845e583d91de30e47b1f49c41411/#7eecf5/1/Frau/SUV/SU-Z 15",car.toStringSeperatedBySlash());
     }
 
     @Test
