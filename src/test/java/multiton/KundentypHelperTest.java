@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class KundentypHelperTest {
 
     @Test
-    @DisplayName("Testet ob die Personengruppe vom erwarteten Typ ist")
+    @DisplayName("Tests whether the people group is of the expected type")
     void getPersonengruppe() {
         assertTrue(KundentypHelper.getKunde("Abonnent") instanceof Abonnent);
         assertTrue(KundentypHelper.getKunde("Behinderte") instanceof Behinderte);
@@ -21,13 +21,13 @@ public class KundentypHelperTest {
 
 
     @Test
-    @DisplayName("Prueft ob null zurueckgegeben wird, wenn die Personengruppe undefiniert ist")
-    void getPersonengruppe_ungueltigesPersonengruppe_fehlermeldung() {
+    @DisplayName("Checks whether null is returned if the group of people is undefined")
+    void getPersonengruppe2() {
         assertEquals(null, KundentypHelper.getKunde("ABC"));
     }
 
     @Test
-    @DisplayName("Prüft die getGebührenfak Methode")
+    @DisplayName("Checks the getGebuehrenfak method")
     void getGebuehrenfakTest(){
         assertEquals(0.075,KundentypHelper.getKunde("Frau").getGebuehrenfak());
         assertEquals(0,KundentypHelper.getKunde("Abonnent").getGebuehrenfak());
