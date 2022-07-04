@@ -32,7 +32,9 @@ public class Car implements CarIF {
     public String getKundentyp() {
         return params[7];
     }
-
+    public String getSpace(){
+        return params[6];
+    }
     @Override
     public Ticket getTicket() {
         return t;

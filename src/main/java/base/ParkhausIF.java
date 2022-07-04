@@ -11,7 +11,7 @@ public interface ParkhausIF {
     int enter(CarIF c);
 
     double leave(int nr,long duration);
-
+    int getParkplatzSize();
     CarIF[] getCars();
 
     List<TicketIF> getTicket();
@@ -22,4 +22,6 @@ public interface ParkhausIF {
 
     void undo();
     List<CarIF> getCarsList();
+    void changeMax(int newSize);
+    String carsListToString();
 }

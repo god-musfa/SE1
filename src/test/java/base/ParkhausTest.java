@@ -6,6 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -94,5 +96,40 @@ class ParkhausTest {
     }
 
 
+    @Test
+    void getCarsList() {
+        ph.enter(c1);
+        ph.enter(c2);
+        ph.enter(c3);
 
+        List<CarIF> cars =  new ArrayList<>();
+        cars.add(c1);
+        cars.add(c2);
+        cars.add(c3);
+
+        assertEquals(cars,ph.getCarsList());
+    }
+
+    @Test
+    void getParkplatzSize() {
+        assertEquals(15,ph.getParkplatzSize());
+    }
+
+    @Test
+    void changeMax() {
+        assertEquals(15,ph.getParkplatzSize());
+        ph.changeMax(13);
+        assertEquals(13,ph.getParkplatzSize());
+    }
+
+    @Test
+    void carsListToString() {
+    assertEquals("",ph.carsListToString());
+
+    ph.enter(c1);
+    assertEquals(c1.toStringSeperatedBySlash(),ph.carsListToString());
+
+    ph.enter(c2);
+    assertEquals(c1.toStringSeperatedBySlash()+","+c2.toStringSeperatedBySlash(),ph.carsListToString());
+    }
 }

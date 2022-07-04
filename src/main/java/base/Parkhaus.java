@@ -148,13 +148,14 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
         }
         return newCars;
     }
-    public String CarsListToString() {
+    public String carsListToString() {
         if (this.getCarsList().size() != 0) {
-            String carsString = this.getCarsList().get(0).toStringSeperatedBySlash();
+            StringBuilder sb = new StringBuilder();
+            sb.append(this.getCarsList().get(0).toStringSeperatedBySlash());
             for (int i = 1; i < this.getCarsList().size(); i++) {
-                carsString += "," + this.getCarsList().get(i).toStringSeperatedBySlash();
+                sb.append("," + this.getCarsList().get(i).toStringSeperatedBySlash());
             }
-            return carsString;
+            return sb.toString();
         }
         else {
             return "";
