@@ -1,7 +1,6 @@
 package helper;
 
 import base.CarIF;
-import base.Parkhaus;
 import base.TicketIF;
 
 import java.util.List;
