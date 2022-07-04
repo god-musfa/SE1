@@ -1,6 +1,6 @@
 package base;
 
-import multiton.Fahrzeugtyp;
+
 import multiton.FahrzeugtypHelper;
 import multiton.KundentypHelper;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TicketTest {
-    Ticket ticket1,ticket2,ticket3;
+    Ticket ticket1;
+    Ticket ticket2;
+    Ticket ticket3;
     @BeforeEach
     void setUp() {
         ticket1 = new Ticket("1","100");

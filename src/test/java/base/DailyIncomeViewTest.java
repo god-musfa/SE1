@@ -31,7 +31,7 @@ class DailyIncomeViewTest {
         c2.getTicket().setPrice(1500);
         c3.getTicket().setPrice(400);
 
-        long unix = 1654704862;
+
         c1.getTicket().setDuration(0);
         c2.getTicket().setDuration(0);
         c3.getTicket().setDuration(86400);

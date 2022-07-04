@@ -6,7 +6,8 @@ import multiton.Kundentyp;
 public class Ticket implements TicketIF{
     private String ticketID; //TicketID as Hash from Javascript
     private double price;
-    private long begin,duration;
+    private long begin;
+    private long duration;
     private Long end;
     public Ticket(String ticketID, String begin){
         this.ticketID = ticketID;
