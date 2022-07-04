@@ -2,6 +2,7 @@ package helper;
 
 import base.Car;
 import base.CarIF;
+import junit.framework.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -75,5 +76,11 @@ class ButtonCalcTest {
         assertEquals(0.0, ButtonCalc.calcSum(carsListEmpty));
         assertEquals(0.0, ButtonCalc.calcAvgPrice(carsListEmpty));
         assertEquals(0.0, ButtonCalc.calcAvgDuration(carsListEmpty));
+    }
+
+    @Test
+    @DisplayName("Checks whether the sum of all Cars counted is returned")
+    void calcGesamtAnzahlAutos() {
+        Assert.assertEquals(4,ButtonCalc.calcGesamtAnzahlAutos(carsList));
     }
 }
