@@ -3,6 +3,9 @@ package base;
 import command.Enter;
 import command.ICommand;
 import command.Leave;
+import multiton.FahrzeugtypHelper;
+import multiton.Kundentyp;
+import multiton.KundentypHelper;
 import mvc.IModelInterface;
 import mvc.IObserverInterface;
 
@@ -45,7 +48,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     }
 
     @Override
-    public double leave(int nr) {
+    public double leave(int nr, long duration) {
         if (cars == null) {
             this.notifyObservers();
             return -1.0;
@@ -55,6 +58,9 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 continue;
             }
             if ((cars[i].nr() == nr && cars[i] != null)){
+                CarIF car = cars[i];
+                car.getTicket().setPrice(FahrzeugtypHelper.getFahrzeug(car.getVehicleType()), KundentypHelper.getKunde(car.getKundentyp()),duration);
+                double price = car.getTicket().getPrice();
                 cars[i] = null; //ToDo: Change price in cars list
                 Leave l = new Leave(this,nr);
                 clist.add(l);
@@ -63,7 +69,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                     elist.remove(o.get());
                 }
                 this.notifyObservers();
-                return 5.00;
+                return price;
             }
         }
         this.notifyObservers();

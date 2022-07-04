@@ -23,8 +23,8 @@ public class Ticket implements TicketIF{
         this.price = price;
     }
     @Override
-    public void setPrice(Fahrzeugtyp ft, Kundentyp kt){
-        price = ft.getGebuehrenfaktor()*kt.getGebuehrenfak()*duration();
+    public void setPrice(Fahrzeugtyp ft, Kundentyp kt, long duration){
+        price = ft.getGebuehrenfaktor()*kt.getGebuehrenfak()*(duration/100);
     }
     @Override
     public String getTicketID() {

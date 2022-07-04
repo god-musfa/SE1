@@ -7,7 +7,8 @@ public interface TicketIF {
     double getPrice();
     void setPrice(double price);
 
-    void setPrice(Fahrzeugtyp ft, Kundentyp kt);
+
+    void setPrice(Fahrzeugtyp ft, Kundentyp kt, long duration);
 
     String getTicketID();
     public Long getEnd();

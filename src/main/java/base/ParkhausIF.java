@@ -10,7 +10,7 @@ public interface ParkhausIF {
 
     int enter(CarIF c);
 
-    double leave(int nr);
+    double leave(int nr,long duration);
 
     CarIF[] getCars();
 

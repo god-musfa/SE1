@@ -43,22 +43,22 @@ class ParkhausTest {
         ph.enter(c1);
         ph.enter(c2);
         ph.enter(c3);
-        assertEquals(5.00,ph.leave(1));
-        assertEquals(5.00,ph.leave(2));
-        assertEquals(5.00,ph.leave(3));
-        assertEquals(-1.00,ph.leave(4));
+        assertEquals(0.00,ph.leave(1,0));
+        assertEquals(0.00,ph.leave(2,0));
+        assertEquals(0.00,ph.leave(3,0));
+        assertEquals(-1.00,ph.leave(4,0));
     }
 
     @Test
     @DisplayName("Testet ob Autos rausfahren koennen obwohl das Parkhaus leer ist." )
     void leaveTest2() {
-        assertEquals(-1.00,ph.leave(1));
+        assertEquals(-1.00,ph.leave(1,0));
     }
     @Test
     @DisplayName("Testet ob Autos rausfahren koennen obwohl sie nicht im Parkhaus sind." )
     void leaveTest3() {
         ph.enter(c1);
-        assertEquals(-1.00,ph.leave(2));
+        assertEquals(-1.00,ph.leave(2,0));
     }
 
     @Test
@@ -66,7 +66,7 @@ class ParkhausTest {
     void leaveEnterTest() {
         ph.enter(c1);
         ph.enter(c2);
-        ph.leave(1);
+        ph.leave(1,0);
         ph.enter(c3);
         assertEquals(c3.nr(),ph.getCars()[0].nr());
     }

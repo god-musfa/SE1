@@ -24,11 +24,11 @@ class TicketTest {
     @Test
     @DisplayName("Checks price calculation for different Vehicle and Customer Types")
     void setPrice() {
-        ticket1.setPrice(FahrzeugtypHelper.getFahrzeug("PKW"), KundentypHelper.getKunde("Parkhauskunde"));
-        assertEquals(40.0,ticket1.getPrice());
-        ticket2.setPrice(FahrzeugtypHelper.getFahrzeug("Zweirad"),KundentypHelper.getKunde("Behinderte"));
-        assertEquals(90.0,ticket2.getPrice());
-        ticket3.setPrice(FahrzeugtypHelper.getFahrzeug("Pickup"),KundentypHelper.getKunde("Abonnent"));
+        ticket1.setPrice(FahrzeugtypHelper.getFahrzeug("PKW"), KundentypHelper.getKunde("Parkhauskunde"),400000);
+        assertEquals(400.0,ticket1.getPrice());
+        ticket2.setPrice(FahrzeugtypHelper.getFahrzeug("Zweirad"),KundentypHelper.getKunde("Behinderte"),3600000);
+        assertEquals(900.0,ticket2.getPrice());
+        ticket3.setPrice(FahrzeugtypHelper.getFahrzeug("Pickup"),KundentypHelper.getKunde("Abonnent"),7200000);
         assertEquals(0.0,ticket3.getPrice());
     }
 }

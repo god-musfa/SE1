@@ -106,7 +106,7 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
 
 
 
-                out.println( parkhaus.leave(Integer.parseInt(params[1])));  // server calculated price
+                out.println( parkhaus.leave(Integer.parseInt(params[1]),Long.parseLong(params[3])));  // server calculated price
                 //System.out.println( "leave," + oldCar + ", price = " + price );
                 break;
             case "invalid": case "occupied":

@@ -19,7 +19,7 @@ public class WeeklyIncomeController implements IControllerInterface{
     }
 
     @Override
-    public void leave(int i) {
-        mModel.leave(i);
+    public void leave(int i,long duration) {
+        mModel.leave(i,duration);
     }
 }

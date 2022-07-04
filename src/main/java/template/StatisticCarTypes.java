@@ -12,7 +12,7 @@ public class StatisticCarTypes extends ChartStatistic {
         List<Integer> count = new ArrayList<>();
         for(String strings: label){
             count.add((int) car.stream()
-                    .filter((CarIF c)  -> strings.equals(c.getType()))
+                    .filter((CarIF c)  -> strings.equals(c.getVehicleType()))
                     .count());
         }
         return count;
@@ -20,6 +20,6 @@ public class StatisticCarTypes extends ChartStatistic {
 
     @Override
     public List<String> labelBerechnen(List<CarIF> car) {
-        return car.stream().map(CarIF::getType).distinct().collect(Collectors.toList());
+        return car.stream().map(CarIF::getVehicleType).distinct().collect(Collectors.toList());
     }
 }

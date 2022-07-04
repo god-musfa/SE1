@@ -2,6 +2,8 @@ package base;
 
 import multiton.Fahrzeugtyp;
 import multiton.FahrzeugtypHelper;
+import multiton.Kundentyp;
+import multiton.KundentypHelper;
 
 import java.util.Arrays;
 
@@ -22,7 +24,7 @@ public class Car implements CarIF {
         
     }
 
-    public String getType(){
+    public String getVehicleType(){
         return params[8];
     }
 

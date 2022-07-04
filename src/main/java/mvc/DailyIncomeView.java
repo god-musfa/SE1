@@ -16,8 +16,8 @@ public class DailyIncomeView implements IObserverInterface {
     public void enterCar(Car c){
         pController.enter(c);
     }
-    public void leave(int i){
-        pController.leave(i);
+    public void leave(int i,long duration){
+        pController.leave(i,duration);
     }
     @Override
     public void update() {

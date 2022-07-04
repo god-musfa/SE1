@@ -89,7 +89,7 @@ public class CommandTest {
         ArrayList<Enter> x = ph.getEnterCommand();
         ArrayList<ICommand> y= ph.getCommand();
 
-        ph.leave(c3.nr());
+        ph.leave(c3.nr(),0);
         assertFalse(x.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c3));
         assertTrue(y.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c3));
         ph.undo();
