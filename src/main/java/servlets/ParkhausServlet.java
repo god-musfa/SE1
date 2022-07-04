@@ -65,7 +65,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "chart":
                 StatisticCarTypes sct = new StatisticCarTypes();
-                out.println(sct.statistikErstellen(cars()));
+                out.println(sct.statistikErstellen(parkhaus.getCarsList()));
                 break;
             case "Gesamtanzahl Autos":
                 out.println(ButtonCalc.calcGesamtAnzahlAutos(parkhaus.getCarsList()));
@@ -96,7 +96,6 @@ public abstract class ParkhausServlet extends HttpServlet {
         switch( event ){
             case "enter":
                 CarIF newCar = new Car( restParams );
-                cars().add( newCar );
                 // System.out.println( "enter," + newCar );
                 // re-direct car to another parking lot
                 out.println( parkhaus.enter(newCar) );
@@ -129,17 +128,6 @@ public abstract class ParkhausServlet extends HttpServlet {
         return getServletConfig().getServletContext();
     }
 
-
-    /**
-     * @return the list of all cars stored in the servlet context so far
-     */
-    @SuppressWarnings("unchecked")
-    List<CarIF> cars(){
-        if ( getContext().getAttribute( "cars"+NAME() ) == null ){
-            getContext().setAttribute( "cars"+NAME(), new ArrayList<Car>() );
-        }
-        return (List<CarIF>) getContext().getAttribute( "cars"+NAME() );
-    }
 
     /**
     * @param request the HTTP POST request
