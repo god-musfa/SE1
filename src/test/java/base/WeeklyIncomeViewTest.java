@@ -27,7 +27,7 @@ class WeeklyIncomeViewTest {
         c1 = new Car(st1);
         c2 = new Car(st2);
         c3 = new Car(st3);
-        c1.getTicket().setPrice(100);
+        c1.getTicket().setPrice(101);
         c2.getTicket().setPrice(1500);
         c3.getTicket().setPrice(400);
         c1.getTicket().setDuration(0);

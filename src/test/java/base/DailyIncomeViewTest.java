@@ -29,11 +29,11 @@ class DailyIncomeViewTest {
         c3 = new Car(st3);
         c1.getTicket().setPrice(100);
         c2.getTicket().setPrice(1500);
-        c3.getTicket().setPrice(400);
+        c3.getTicket().setPrice(401);
 
 
         c1.getTicket().setDuration(0);
-        c2.getTicket().setDuration(0);
+        c2.getTicket().setDuration(1);
         c3.getTicket().setDuration(86400);
     }
     @Test
@@ -41,7 +41,7 @@ class DailyIncomeViewTest {
         wi.enterCar(c1);
         wi.enterCar(c2);
         wi.enterCar(c3);
-        assertEquals(2000.00,wi.getDailyIncome());
+        assertEquals(2001.00,wi.getDailyIncome());
 
     }
 
