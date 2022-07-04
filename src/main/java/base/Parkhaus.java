@@ -121,14 +121,25 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     public int getParkplatzSize(){
         return cars.length;
     }
-    public void changeMax(int newSize){ //ToDo size groesser machen error
-        CarIF[] temp = cars;
-        CarIF[] newCars = new Car[newSize];
-        for (int i = 0; i < newCars.length ; i++){
-            newCars[i] = cars[i];
-        }
+    public void changeMax(int newSize){
+        CarIF[] newCars;
+        newCars = changeArraySize(newSize);
         cars = newCars;
     }
 
+    private CarIF[] changeArraySize(int newSize){
+        CarIF[] newCars = new Car[newSize];
+        int forLoopSize;
 
+        if (newSize > this.cars.length){
+            forLoopSize = this.cars.length;
+        }else{
+            forLoopSize = newSize;
+        }
+
+        for (int i = 0; i < forLoopSize ; i++){
+            newCars[i] = this.cars[i];
+        }
+        return newCars;
+    }
 }
