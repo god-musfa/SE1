@@ -97,4 +97,11 @@ public class CommandTest {
         assertFalse(y.stream().map(ICommand::getCar).collect(Collectors.toList()).contains(c2));
     }
 
+    @Test
+    void undoWithoutCars(){
+        assertTrue(ph.getEnterCommand().isEmpty());
+        ph.undo();
+        assertTrue(ph.getEnterCommand().isEmpty());
+    }
+
 }
