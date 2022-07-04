@@ -8,7 +8,6 @@ public class Ticket implements TicketIF{
     private double price;
     private long begin;
     private long duration;
-    private Long end;
     public Ticket(String ticketID, String begin){
         this.ticketID = ticketID;
         this.price = 0.0;
@@ -37,10 +36,7 @@ public class Ticket implements TicketIF{
     public Long getEnd(){
         return begin+duration;
     }
-    @Override
-    public void setEnd(long end){
-        this.end = end;
-    }
+
     @Override
     public void setDuration(long x){
         duration = x;
