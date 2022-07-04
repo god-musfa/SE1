@@ -1,6 +1,7 @@
 package helper;
 
 import base.CarIF;
+import base.Parkhaus;
 import base.TicketIF;
 
 import java.util.List;
@@ -44,7 +45,9 @@ public class ButtonCalc {
                 .sum();
         return (double) Math.round((sumDur/calcAnzahl(carsList)) * 100) / 100;
     }
-
+    public static int calcGesamtAnzahlAutos(List<CarIF> cars){
+        return cars.size();
+    }
     private static double calcAnzahl(List<CarIF> carsList) {
         return carsList.stream().filter(x -> !x.getKundentyp().equals(IGNORECT)).filter(x -> x.getTicket().getDuration() != 0).count();
     }

@@ -66,7 +66,7 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 out.println(sct.statistikErstellen(cars()));
                 break;
             case "Gesamtanzahl Autos":
-                out.println(""); //@toDo Implementieren
+                out.println(ButtonCalc.calcGesamtAnzahlAutos(parkhaus.getCarsList()));
 
                 break;
             default:
