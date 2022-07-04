@@ -18,7 +18,9 @@ import base.CarIF;
  * common superclass for all servlets
  * groups all auxiliary common methods used in all servlets
  */
-public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus Model
+public abstract class ParkhausServlet extends HttpServlet {
+    //TODO MVC Parkhaus Model
+    //TODO Reset Button fürs resetten des Parkhauses
 
     /* abstract methods, to be defined in subclasses */
     abstract String NAME(); // each ParkhausServlet should have a name, e.g. "Level1"
