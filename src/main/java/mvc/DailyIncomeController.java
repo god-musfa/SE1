@@ -19,7 +19,7 @@ public class DailyIncomeController implements IControllerInterface{
     }
 
     @Override
-    public void leave(int i, long duration) {
-        mModel.leave(i,duration);
+    public double leave(int i, long duration) {
+        return mModel.leave(i,duration);
     }
 }

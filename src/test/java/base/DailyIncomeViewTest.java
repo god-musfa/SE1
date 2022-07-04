@@ -21,9 +21,9 @@ class DailyIncomeViewTest {
     void setUp() {
         ph = new Parkhaus(15);
         wi = new DailyIncomeView(ph);
-        st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","dfds","sadas"};
-        st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","sddd","gmgj"};
-        st3 = new String[]{"3", "2", "3","ab","af","faff","ffgg","bgfs","fff"};
+        st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","Frau","SUV"};
+        st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","Parkhauskunde","SUV"};
+        st3 = new String[]{"3", "2", "3","ab","af","faff","ffgg","Frau","PKW"};
         c1 = new Car(st1);
         c2 = new Car(st2);
         c3 = new Car(st3);
@@ -63,6 +63,14 @@ class DailyIncomeViewTest {
         ph.removeObserver(wi);
         ph.removeObserver(wi);
         assertTrue((ph.getObservers().isEmpty()));
+    }
+
+    @Test
+    void leaveTest(){
+        wi.enterCar(c1);
+        wi.enterCar(c2);
+        wi.enterCar(c3);
+        assertEquals(0,wi.leave(1,0));
     }
 
 }
