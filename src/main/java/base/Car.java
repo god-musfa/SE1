@@ -4,8 +4,6 @@ import helper.ParamsHelper;
 import multiton.Fahrzeugtyp;
 import multiton.FahrzeugtypHelper;
 
-import java.util.Arrays;
-
 
 public class Car implements CarIF {
     String[] params;
@@ -21,8 +19,8 @@ public class Car implements CarIF {
     public int getNr() {
         return Integer.parseInt(ParamsHelper.getNr(this.params));
     }
-    public int getTimer(){
-        return Integer.parseInt(ParamsHelper.getTimer(this.params));
+    public Long getTimer(){
+        return Long.parseLong(ParamsHelper.getTimer(this.params));
     }
     public String getColor(){
         return ParamsHelper.getColor(this.params);
@@ -37,8 +35,8 @@ public class Car implements CarIF {
     public String getKundentyp() {
         return ParamsHelper.getClient_category(this.params);
     }
-    public String getSpace(){
-        return ParamsHelper.getSpace(this.params);
+    public int getSpace(){
+        return Integer.parseInt(ParamsHelper.getSpace(this.params));
     }
     public String getLicense(){
         return ParamsHelper.getLicense(this.params);
@@ -54,10 +52,6 @@ public class Car implements CarIF {
         params[3] = ""+t.getPrice();
     }
 
-    @Override
-    public String toString(){
-        return Arrays.toString( params );
-    }
     public String toStringSeperatedBySlash(){ //Todo: needs Test
         this.setMissingParams();
         StringBuilder sb = new StringBuilder();
