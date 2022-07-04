@@ -39,5 +39,7 @@ class CarTest {
 
     @Test
     void setParkplatzNumber() {
+        car.setParkplatzNumber(2);
+        assertEquals("2",car.getSpace());
     }
 }

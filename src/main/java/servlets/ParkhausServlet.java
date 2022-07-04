@@ -59,7 +59,7 @@ public abstract class ParkhausServlet extends HttpServlet { //TODO MVC Parkhaus 
                 // Format: Nr, timer begin, duration, price, Ticket, color, space, client category, vehicle type, license (PKW Kennzeichen)
                 // For example:
                 // out.println("1/1648465400000/_/_/Ticket1/#0d1e0a/2/any/PKW/1,2/1648465499999/_/_/Ticket2/#dd10aa/3/any/PKW/2");
-                out.println(parkhaus.CarsListToString());
+                out.println(parkhaus.carsListToString());
                 break;
             case "chart":
                 StatisticCarTypes sct = new StatisticCarTypes();
