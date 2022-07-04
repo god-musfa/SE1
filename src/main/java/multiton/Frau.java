@@ -3,7 +3,7 @@ package multiton;
 public class Frau extends Kundentyp{
     private static Kundentyp instance = new Frau();
     private Frau() {
-        super(6);
+        super(0.075);
     }
 
     public static Kundentyp getKundentyp() {
