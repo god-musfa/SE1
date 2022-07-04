@@ -40,17 +40,17 @@ class CarTest {
     @Test
     void setParkplatzNumber() {
         car.setParkplatzNumber(2);
-        assertEquals("2",car.getSpace());
+        assertEquals(2,car.getSpace());
     }
 
     @Test
     void getNr() {
-        assertEquals("6",car.getNr());
+        assertEquals(6,car.getNr());
     }
 
     @Test
     void getTimer() {
-        assertEquals("1651072643184",car.getTimer());
+        assertEquals((Long.parseLong("1651072643184")),car.getTimer());
     }
 
     @Test
@@ -60,7 +60,7 @@ class CarTest {
 
     @Test
     void getVehicleType() {
-        assertEquals("8",car.getVehicleType());
+        assertEquals("SUV",car.getVehicleType());
     }
 
     @Test
