@@ -28,7 +28,7 @@ public class KundentypHelperTest {
 
     @Test
     @DisplayName("Prüft die getGebührenfak Methode")
-    void getGebührenfakTest(){
+    void getGebuehrenfakTest(){
         assertEquals(0.075,KundentypHelper.getKunde("Frau").getGebuehrenfak());
         assertEquals(0,KundentypHelper.getKunde("Abonnent").getGebuehrenfak());
         assertEquals(0.05,KundentypHelper.getKunde("Behinderte").getGebuehrenfak());

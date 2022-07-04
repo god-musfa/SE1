@@ -32,7 +32,7 @@ class FahrzeugtypHelperTest {
 
     @Test
     @DisplayName("Prüft die getGebührenfaktor Methode")
-    void getGebührenfaktorTest(){
+    void getGebuehrenfaktorTest(){
         assertEquals(0.5,FahrzeugtypHelper.getFahrzeug(ZWEIRAD).getGebuehrenfaktor());
         assertEquals(0.7,FahrzeugtypHelper.getFahrzeug(TRIKE).getGebuehrenfaktor());
         assertEquals(0.8,FahrzeugtypHelper.getFahrzeug(QUAD).getGebuehrenfaktor());
