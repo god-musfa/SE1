@@ -23,9 +23,9 @@ public class CommandTest {
 
     @BeforeEach
     void setUp() {
-        st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","dfds","sadas"};
-        st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","sddd","gmgj"};
-        st3 = new String[]{"3", "2", "3","ab","af","faff","ffgg","bgfs","fff"};
+        st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","Frau","PKW"};
+        st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","Familie","SUV"};
+        st3 = new String[]{"3", "2", "3","ab","af","faff","ffgg","Abonnent","Pickup"};
         ph = new Parkhaus(15);
         c1 = new Car(st1);
         c2 = new Car(st2);
