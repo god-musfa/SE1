@@ -13,5 +13,5 @@ public interface TicketIF {
     String getTicketID();
     public Long getEnd();
     public void setEnd(long end);
-    public long duration();
+    public long getDuration();
 }

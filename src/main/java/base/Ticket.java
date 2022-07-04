@@ -43,7 +43,7 @@ public class Ticket implements TicketIF{
     }
 
     @Override
-    public long duration() {
+    public long getDuration() {
         return duration;
     }
 }

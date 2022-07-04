@@ -4,7 +4,6 @@ import command.Enter;
 import command.ICommand;
 import command.Leave;
 import multiton.FahrzeugtypHelper;
-import multiton.Kundentyp;
 import multiton.KundentypHelper;
 import mvc.IModelInterface;
 import mvc.IObserverInterface;
@@ -55,7 +54,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             return -1.0;
         }
         for(int i=0; i!=cars.length;i++){
-            if(cars[i]==null || (cars[i].getTicket().duration()!=0)){
+            if(cars[i]==null || (cars[i].getTicket().getDuration()!=0)){
                 continue;
             }
             if ((cars[i].nr() == nr && cars[i] != null)){

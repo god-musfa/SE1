@@ -27,9 +27,9 @@ class ButtonCalcTest {
         c[1].getTicket().setPrice(10);
         c[2].getTicket().setPrice(5);
         c[3].getTicket().setPrice(1);
-        c[0].getTicket().setEnd(Long.parseLong("1651072643300"));
-        c[1].getTicket().setEnd(Long.parseLong("1651072643100"));
-        c[2].getTicket().setEnd(Long.parseLong("1651072643400"));
+        c[0].getTicket().setDuration(Long.parseLong("100"));
+        c[1].getTicket().setDuration(Long.parseLong("1"));
+        c[2].getTicket().setDuration(Long.parseLong("150"));
         carsList.add(c[0]);
         carsList.add(c[1]);
         carsList.add(c[2]);
@@ -63,7 +63,7 @@ class ButtonCalcTest {
     @Test
     @DisplayName("Checks whether the average Duration is returned")
     void calcAvgDuration() {
-        assertEquals(83.33, ButtonCalc.calcAvgDuration(carsList));
+        assertEquals(83.67, ButtonCalc.calcAvgDuration(carsList));
     }
 
     @Test

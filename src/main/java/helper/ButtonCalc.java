@@ -10,7 +10,7 @@ import java.util.stream.DoubleStream;
  * Calculation class for buttons in the servlet
  */
 public class ButtonCalc {
-    private static final String ignoreCuTy = "Abonnent"; //ignoreCustomerType: Customer type that should not be included in the calculation
+    private static final String IGNORECT = "Abonnent"; //ignoreCustomerType: Customer type that should not be included in the calculation
 
     private ButtonCalc() {
         //ButtonCalc is a Utility class
@@ -37,21 +37,21 @@ public class ButtonCalc {
 
     public static double calcAvgDuration(List<CarIF> carsList) {
         long sumDur = carsList.stream()
-                .filter(x -> !x.getKundentyp().equals(ignoreCuTy))
+                .filter(x -> !x.getKundentyp().equals(IGNORECT))
                 .map(CarIF::getTicket)
-                .map(TicketIF::duration)
+                .map(TicketIF::getDuration)
                 .mapToLong(duration -> duration)
                 .sum();
         return (double) Math.round((sumDur/calcAnzahl(carsList)) * 100) / 100;
     }
 
     private static double calcAnzahl(List<CarIF> carsList) {
-        return carsList.stream().filter(x -> !x.getKundentyp().equals(ignoreCuTy)).filter(x -> x.getTicket().getEnd() != null).count();
+        return carsList.stream().filter(x -> !x.getKundentyp().equals(IGNORECT)).filter(x -> x.getTicket().getDuration() != 0).count();
     }
 
     private static DoubleStream calcPriceStream(List<CarIF> carsList) {
         return carsList.stream()
-                .filter(x -> !x.getKundentyp().equals(ignoreCuTy))
+                .filter(x -> !x.getKundentyp().equals(IGNORECT))
                 .map(CarIF::getTicket)
                 .map(TicketIF::getPrice)
                 .mapToDouble(price -> price);
