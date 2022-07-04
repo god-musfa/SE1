@@ -32,12 +32,15 @@ public class Ticket implements TicketIF{
     public String getTicketID() {
         return this.ticketID;
     }
+    @Override
     public Long getEnd(){
         return this.end;
     }
+    @Override
     public void setEnd(long end){
         this.end = end;
     }
+    @Override
     public void setDuration(long x){
         duration = x;
     }

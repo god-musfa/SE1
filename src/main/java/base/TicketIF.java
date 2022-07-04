@@ -14,4 +14,6 @@ public interface TicketIF {
     public Long getEnd();
     public void setEnd(long end);
     public long getDuration();
+    public void setDuration(long x);
+    
 }
