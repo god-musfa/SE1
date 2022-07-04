@@ -6,4 +6,8 @@ public abstract class Kundentyp {
     protected Kundentyp(double gebuehrenfak) {
         this.gebuehrenfak = gebuehrenfak;
     }
+
+    public double getGebuehrenfak() {
+        return gebuehrenfak;
+    }
 }
