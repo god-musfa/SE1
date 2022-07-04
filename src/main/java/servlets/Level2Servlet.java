@@ -20,7 +20,7 @@ public class Level2Servlet extends ParkhausServlet {
     @Override
     String config(){
         if (parkhaus == null) {
-            this.parkhaus = new Parkhaus(14);
+            this.parkhaus = new Parkhaus(14); //initial Size for Parkhause Etage 2
         }
         return this.MAX()+",0,24,100,10"; // config
         // Config Format is "Max, open_from, open_to, delay, simulation_speed"
