@@ -14,7 +14,7 @@ public class KundentypHelper {
     }
 
     private KundentypHelper() {
-        throw new IllegalStateException("KundentypHelper is a Utitlity class");
+        //KundentypHelper is a Utility class
     }
 
 
