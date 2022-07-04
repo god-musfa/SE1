@@ -42,4 +42,35 @@ class CarTest {
         car.setParkplatzNumber(2);
         assertEquals("2",car.getSpace());
     }
+
+    @Test
+    void getNr() {
+        assertEquals("6",car.getNr());
+    }
+
+    @Test
+    void getTimer() {
+        assertEquals("1651072643184",car.getTimer());
+    }
+
+    @Test
+    void getColor() {
+        assertEquals("#7eecf5",car.getColor());
+    }
+
+    @Test
+    void getVehicleType() {
+        assertEquals("8",car.getVehicleType());
+    }
+
+    @Test
+    void getSpace() {
+        assertEquals(1,car.getSpace());
+    }
+
+    @Test
+    void getLicense() {
+        assertEquals("SU-Z 15",car.getLicense());
+    }
+
 }
