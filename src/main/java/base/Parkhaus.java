@@ -55,7 +55,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             return -1.0;
         }
         for(int i=0; i!=cars.length;i++){
-            if(cars[i]==null){
+            if(cars[i]==null || (cars[i].getTicket().duration()!=0)){
                 continue;
             }
             if ((cars[i].nr() == nr && cars[i] != null)){
