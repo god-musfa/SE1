@@ -1,10 +1,7 @@
 package base;
 
-import multiton.Fahrzeugtyp;
-import multiton.Kundentyp;
-
 public interface CarIF {
-    int nr();
+    int getNr();
     String getVehicleType();
     String getKundentyp();
     String getSpace();

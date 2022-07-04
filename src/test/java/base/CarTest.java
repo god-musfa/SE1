@@ -18,7 +18,7 @@ class CarTest {
     @Test
     @DisplayName("Tests whether car.nr returns right value")
     void nrTest() {
-        assertEquals(6,car.nr());
+        assertEquals(6,car.getNr());
     }
 
     @Test

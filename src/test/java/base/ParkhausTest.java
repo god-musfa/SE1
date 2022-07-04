@@ -72,7 +72,7 @@ class ParkhausTest {
         ph.enter(c2);
         ph.leave(1,0);
         ph.enter(c3);
-        assertEquals(c3.nr(),ph.getCars()[0].nr());
+        assertEquals(c3.getNr(),ph.getCars()[0].getNr());
     }
 
     @AfterEach

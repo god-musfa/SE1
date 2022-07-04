@@ -1,9 +1,8 @@
 package base;
 
+import helper.ParamsHelper;
 import multiton.Fahrzeugtyp;
 import multiton.FahrzeugtypHelper;
-import multiton.Kundentyp;
-import multiton.KundentypHelper;
 
 import java.util.Arrays;
 
@@ -19,22 +18,32 @@ public class Car implements CarIF {
     }
 
     @Override
-    public int nr() {
-        return Integer.parseInt(params[0]);
-        
+    public int getNr() {
+        return Integer.parseInt(ParamsHelper.getNr(this.params));
+    }
+    public int getTimer(){
+        return Integer.parseInt(ParamsHelper.getTimer(this.params));
+    }
+    public String getColor(){
+        return ParamsHelper.getColor(this.params);
     }
 
+
     public String getVehicleType(){
-        return params[8];
+        return ParamsHelper.getVehicle_type(this.params);
     }
 
     @Override
     public String getKundentyp() {
-        return params[7];
+        return ParamsHelper.getClient_category(this.params);
     }
     public String getSpace(){
-        return params[6];
+        return ParamsHelper.getSpace(this.params);
     }
+    public String getLicense(){
+        return ParamsHelper.getLicense(this.params);
+    }
+
     @Override
     public Ticket getTicket() {
         return t;
