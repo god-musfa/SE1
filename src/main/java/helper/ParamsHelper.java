@@ -1,6 +1,11 @@
 package helper;
 
 public class ParamsHelper {
+
+    private ParamsHelper(){
+        //is a utility class
+    }
+
     public static String getNr(String[] params){
         return params[0];
     }
