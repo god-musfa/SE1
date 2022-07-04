@@ -34,7 +34,7 @@ public class Ticket implements TicketIF{
     }
     @Override
     public Long getEnd(){
-        return this.end;
+        return begin+duration;
     }
     @Override
     public void setEnd(long end){
