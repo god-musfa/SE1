@@ -16,11 +16,11 @@ class TicketTest {
     @BeforeEach
     void setUp() {
         ticket1 = new Ticket("1","100");
-        ticket1.setEnd(500);
+        ticket1.setDuration(400);
         ticket2 = new Ticket("2","0");
-        ticket2.setEnd(3600);
+        ticket2.setDuration(3600);
         ticket3 = new Ticket("3","0");
-        ticket3.setEnd(7200);
+        ticket3.setDuration(7200);
     }
 
     @Test
