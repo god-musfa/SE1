@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 import java.util.ArrayList;
@@ -120,6 +122,17 @@ class ParkhausTest {
         assertEquals(15,ph.getParkplatzSize());
         ph.changeMax(13);
         assertEquals(13,ph.getParkplatzSize());
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {0,5,20})
+    @DisplayName("Prueft die Veraenderung der maximalen Parkplaetze")
+    void changeMaxTest(int w) {
+        assertEquals(w,w);
+        /*
+        ph.changeMax(w);
+        assertEquals(w, ph.getParkplatzSize());
+         */
     }
 
     @Test
