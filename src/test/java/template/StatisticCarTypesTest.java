@@ -2,6 +2,7 @@ package template;
 
 import base.Car;
 import base.CarIF;
+import org.junit.jupiter.api.DisplayName;
 import template.StatisticCarTypes;
 import jakarta.json.Json;
 import org.junit.jupiter.api.BeforeEach;
@@ -76,5 +77,17 @@ class StatisticCarTypesTest {
         assertNotEquals(vergleichslisteFalsch,labels);
     }
 
+    @Test
+    @DisplayName("Testet gefuelltes statistikErstellen")
+    void statistikErstellenTest() {
+        assertEquals("{\"data\":[{\"values\":[3,2],\"labels\":[\"Pkw\",\"Suv\"],\"type\":\"pie\"}]}",sct.statistikErstellen(testvalues).toString());
+    }
+
+    @Test
+    @DisplayName("Testet leeres statistikErstellen")
+    void statistikErstellenTest2() {
+        List<CarIF> tv = new ArrayList<>();
+        assertEquals("{\"data\":[{\"values\":[],\"labels\":[],\"type\":\"pie\"}]}",sct.statistikErstellen(tv).toString());
+    }
 
 }
