@@ -142,4 +142,11 @@ class ParkhausTest {
     ph.enter(c2);
     assertEquals(c1.toStringSeperatedBySlash()+","+c2.toStringSeperatedBySlash(),ph.carsListToString());
     }
-}
+    @Test
+    void enterFullParkhaus(){
+        ph = new Parkhaus(2);
+        ph.enter(c1);
+        ph.enter(c2);
+        assertEquals(-1,ph.enter(c3));
+
+}}
