@@ -5,7 +5,7 @@ import multiton.FahrzeugtypHelper;
 
 import java.util.Arrays;
 
-// ToDo replace 0 by correct values read from this.params
+
 public class Car implements CarIF {
     String[] params;
     Fahrzeugtyp ft;

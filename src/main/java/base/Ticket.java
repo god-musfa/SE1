@@ -1,5 +1,8 @@
 package base;
 
+import multiton.Fahrzeugtyp;
+import multiton.Kundentyp;
+
 public class Ticket implements TicketIF{
     private String ticketID; //TicketID as Hash from Javascript
     private double price;
@@ -19,7 +22,10 @@ public class Ticket implements TicketIF{
     public void setPrice(double price) {
         this.price = price;
     }
-
+    @Override
+    public void setPrice(Fahrzeugtyp ft, Kundentyp kt){
+        price = ft.getGebuehrenfaktor()*kt.getGebuehrenfak()*duration();
+    }
     @Override
     public String getTicketID() {
         return this.ticketID;

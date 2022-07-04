@@ -1,8 +1,14 @@
 package base;
 
+import multiton.Fahrzeugtyp;
+import multiton.Kundentyp;
+
 public interface TicketIF {
     double getPrice();
     void setPrice(double price);
+
+    void setPrice(Fahrzeugtyp ft, Kundentyp kt);
+
     String getTicketID();
     public Long getEnd();
     public void setEnd(long end);
