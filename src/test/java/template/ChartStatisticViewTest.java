@@ -47,4 +47,11 @@ class ChartStatisticViewTest {
 
         assertEquals("{\"data\":[{\"values\":[2,1],\"labels\":[\"SUV\",\"PKW\"],\"type\":\"pie\"}]}",wi.getPieChart().toString());
     }
+    @Test
+    void leaveTest(){
+        wi.enter(c1);
+        wi.enter(c2);
+        wi.enter(c3);
+        assertEquals(0,wi.leave(1,0));
+    }
 }
