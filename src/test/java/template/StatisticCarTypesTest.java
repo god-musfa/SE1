@@ -3,7 +3,6 @@ package template;
 import base.Car;
 import base.CarIF;
 import org.junit.jupiter.api.DisplayName;
-import template.StatisticCarTypes;
 import jakarta.json.Json;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,8 +29,8 @@ class StatisticCarTypesTest {
     String[] st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","dfds","Pkw"};
     String[] st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","sddd","Suv"};
 
-    nums = new ArrayList<>(List.of(new Integer[]{1, 2, 3, 4, 5}));
-    strings = new ArrayList<>(List.of(new String[]{"a", "b", "c", "d", "e"}));
+    nums = new ArrayList<>(List.of(1, 2, 3, 4, 5));
+    strings = new ArrayList<>(List.of("a", "b", "c", "d", "e"));
 
     Car testcar1 = new Car(st1);
     Car testcar2 = new Car(st2);
@@ -69,8 +68,8 @@ class StatisticCarTypesTest {
 
     @Test
     void labelBerechnen() {
-        List<String> vergleichslisteWahr = new ArrayList<>(List.of(new String[]{"Pkw","Suv"}));
-        List<String> vergleichslisteFalsch = new ArrayList<>(List.of(new String[]{"Pkw","Suv","Zweirad"}));
+        vergleichslisteWahr = new ArrayList<>(List.of("Pkw","Suv"));
+        vergleichslisteFalsch = new ArrayList<>(List.of("Pkw","Suv","Zweirad"));
         labels = statistic.labelBerechnen(testvalues);
 
         assertEquals(vergleichslisteWahr,labels);
@@ -78,13 +77,13 @@ class StatisticCarTypesTest {
     }
 
     @Test
-    @DisplayName("Testet gefuelltes statistikErstellen")
+    @DisplayName("Tests output string of a filled statistic")
     void statistikErstellenTest() {
         assertEquals("{\"data\":[{\"values\":[3,2],\"labels\":[\"Pkw\",\"Suv\"],\"type\":\"pie\"}]}",sct.statistikErstellen(testvalues).toString());
     }
 
     @Test
-    @DisplayName("Testet leeres statistikErstellen")
+    @DisplayName("Tests the output string of an empty statistic")
     void statistikErstellenTest2() {
         List<CarIF> tv = new ArrayList<>();
         assertEquals("{\"data\":[{\"values\":[],\"labels\":[],\"type\":\"pie\"}]}",sct.statistikErstellen(tv).toString());

@@ -6,6 +6,8 @@ import multiton.KundentypHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,14 +25,28 @@ class TicketTest {
         ticket3.setDuration(7200);
     }
 
-    @Test
-    @DisplayName("Checks price calculation for different Vehicle and Customer Types")
-    void setPrice() {
-        ticket1.setPrice(FahrzeugtypHelper.getFahrzeug("PKW"), KundentypHelper.getKunde("Parkhauskunde"),400000);
-        assertEquals(400.0,ticket1.getPrice());
-        ticket2.setPrice(FahrzeugtypHelper.getFahrzeug("Zweirad"),KundentypHelper.getKunde("Behinderte"),3600000);
-        assertEquals(900.0,ticket2.getPrice());
-        ticket3.setPrice(FahrzeugtypHelper.getFahrzeug("Pickup"),KundentypHelper.getKunde("Abonnent"),7200000);
-        assertEquals(0.0,ticket3.getPrice());
+    @ParameterizedTest
+    @DisplayName("Checks price calculation for different Customer Types")
+    @CsvSource({"Parkhauskunde, 400.0, 1800.0, 10800.0", "Behinderte, 200.0, 900.0, 5400.0", "Abonnent, 0.0, 0.0, 0.0" })
+    void setPrice3(String s, double price1, double price2, double price3) {
+        ticket1.setPrice(FahrzeugtypHelper.getFahrzeug("PKW"), KundentypHelper.getKunde(s),400000);
+        assertEquals(price1,Math.round(ticket1.getPrice()*100)/100);
+        ticket2.setPrice(FahrzeugtypHelper.getFahrzeug("Zweirad"),KundentypHelper.getKunde(s),3600000);
+        assertEquals(price2,Math.round(ticket2.getPrice()*100)/100);
+        ticket3.setPrice(FahrzeugtypHelper.getFahrzeug("Pickup"),KundentypHelper.getKunde(s),7200000);
+        assertEquals(price3,Math.round(ticket3.getPrice()*100)/100);
     }
+
+    @ParameterizedTest
+    @DisplayName("Checks price calculation for different Vehicle Types")
+    @CsvSource({"PKW, 400.0, 1800.0, 0.0", "Zweirad, 200.0, 900.0, 0.0", "Pickup, 600.0, 2700.0, 0.0" })
+    void setPrice(String s, double price1, double price2, double price3) {
+        ticket1.setPrice(FahrzeugtypHelper.getFahrzeug(s), KundentypHelper.getKunde("Parkhauskunde"),400000);
+        assertEquals(price1,Math.round(ticket1.getPrice()*100)/100);
+        ticket2.setPrice(FahrzeugtypHelper.getFahrzeug(s),KundentypHelper.getKunde("Behinderte"),3600000);
+        assertEquals(price2,Math.round(ticket2.getPrice()*100)/100);
+        ticket3.setPrice(FahrzeugtypHelper.getFahrzeug(s),KundentypHelper.getKunde("Abonnent"),7200000);
+        assertEquals(price3,Math.round(ticket3.getPrice()*100)/100);
+    }
+
 }
