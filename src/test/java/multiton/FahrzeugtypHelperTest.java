@@ -2,6 +2,8 @@ package multiton;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +16,7 @@ class FahrzeugtypHelperTest {
     static final String PICKUP = "Pickup";
 
     @Test
-    @DisplayName("Testet ob das Fahrzeug vom erwarteten Typ ist")
+    @DisplayName("Tests whether the vehicle is of the expected type")
     void getFahrzeug() {
         assertTrue(FahrzeugtypHelper.getFahrzeug(ZWEIRAD) instanceof Zweirad);
         assertTrue(FahrzeugtypHelper.getFahrzeug(TRIKE) instanceof Trike);
@@ -25,30 +27,23 @@ class FahrzeugtypHelperTest {
     }
 
     @Test
-    @DisplayName("Prueft ob null zurueckgegeben wird, wenn das Fahrzeug nicht definiert ist")
-    void getFahrzeug_ungueltigesFahrzeug_fehlermeldung() {
+    @DisplayName("Checks whether null is returned if the vehicle is not defined")
+    void getFahrzeug2() {
         assertEquals(null, FahrzeugtypHelper.getFahrzeug("ABC"));
     }
 
-    @Test
-    @DisplayName("Prüft die getGebührenfaktor Methode")
-    void getGebuehrenfaktorTest(){
-        assertEquals(0.5,FahrzeugtypHelper.getFahrzeug(ZWEIRAD).getGebuehrenfaktor());
-        assertEquals(0.7,FahrzeugtypHelper.getFahrzeug(TRIKE).getGebuehrenfaktor());
-        assertEquals(0.8,FahrzeugtypHelper.getFahrzeug(QUAD).getGebuehrenfaktor());
-        assertEquals(1.0,FahrzeugtypHelper.getFahrzeug(PKW).getGebuehrenfaktor());
-        assertEquals(1.3,FahrzeugtypHelper.getFahrzeug(SUV).getGebuehrenfaktor());
-        assertEquals(1.5,FahrzeugtypHelper.getFahrzeug(PICKUP).getGebuehrenfaktor());
+    @ParameterizedTest
+    @DisplayName("Checks the surface method for Cartypes")
+    @CsvSource({"1," + ZWEIRAD, "2," + TRIKE, "3," + QUAD, "4," + PKW, "5," + SUV, "6," + PICKUP})
+    void getFlaecheTest(int in, String s) {
+        assertEquals(in,FahrzeugtypHelper.getFahrzeug(s).getFlaeche());
     }
 
-    @Test
-    @DisplayName("Prüft die getFlaeche Methode")
-    void getFlaecheTest(){
-        assertEquals(1,FahrzeugtypHelper.getFahrzeug(ZWEIRAD).getFlaeche());
-        assertEquals(2,FahrzeugtypHelper.getFahrzeug(TRIKE).getFlaeche());
-        assertEquals(3,FahrzeugtypHelper.getFahrzeug(QUAD).getFlaeche());
-        assertEquals(4,FahrzeugtypHelper.getFahrzeug(PKW).getFlaeche());
-        assertEquals(5,FahrzeugtypHelper.getFahrzeug(SUV).getFlaeche());
-        assertEquals(6,FahrzeugtypHelper.getFahrzeug(PICKUP).getFlaeche());
+    @ParameterizedTest
+    @DisplayName("Checks the fees method for Cartypes")
+    @CsvSource({"0.5," + ZWEIRAD, "0.7," + TRIKE, "0.8," + QUAD, "1.0," + PKW, "1.3," + SUV, "1.5," + PICKUP})
+    void getGebuehrenfaktorTest(double d, String s) {
+        assertEquals(d,FahrzeugtypHelper.getFahrzeug(s).getGebuehrenfaktor());
     }
+
 }

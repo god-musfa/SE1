@@ -31,9 +31,8 @@ public class KundentypHelperTest {
     @ParameterizedTest
     @CsvSource({"0.075,Frau", "0,Abonnent", "0.05,Behinderte", "0.05,Firmenkunde", "0.075,Familie", "0.1,Parkhauskunde"})
     @DisplayName("Checks the getGebuehrenfak method for Customertype")
-    void getGebuehrenfakTest2(double d, String s) {
+    void getGebuehrenfakTest(double d, String s) {
         assertEquals(d, KundentypHelper.getKunde(s).getGebuehrenfak());
     }
-
 
 }
