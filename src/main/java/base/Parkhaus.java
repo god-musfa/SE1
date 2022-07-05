@@ -49,15 +49,11 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
 
     @Override
     public double leave(int nr, long duration) {
-        if (cars == null) {
-            this.notifyObservers();
-            return -1.0;
-        }
         for(int i=0; i!=cars.length;i++){
             if(cars[i]==null){
                 continue;
             }
-            if ((cars[i].getNr() == nr && cars[i] != null)){
+            if (cars[i].getNr() == nr){
                 CarIF car = cars[i];
                 car.getTicket().setPrice(FahrzeugtypHelper.getFahrzeug(car.getVehicleType()), KundentypHelper.getKunde(car.getKundentyp()),duration);
                 double price = car.getTicket().getPrice();

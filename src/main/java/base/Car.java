@@ -52,7 +52,7 @@ public class Car implements CarIF {
         params[3] = ""+t.getPrice();
     }
 
-    public String toStringSeperatedBySlash(){ //Todo: needs Test
+    public String toStringSeperatedBySlash(){
         this.setMissingParams();
         StringBuilder sb = new StringBuilder();
         sb.append(params[0]);
@@ -62,7 +62,7 @@ public class Car implements CarIF {
         return sb.toString();
     }
 
-    public void setParkplatzNumber(int n){ //Todo: needs Test
+    public void setParkplatzNumber(int n){
         this.params[6] = ""+n;
     }
 }

@@ -98,6 +98,7 @@ public class CommandTest {
     }
 
     @Test
+    @DisplayName("Tests whether undo on an empty parking garage is recognized correctly")
     void undoWithoutCars(){
         assertTrue(ph.getEnterCommand().isEmpty());
         ph.undo();

@@ -29,6 +29,7 @@ class CarTest {
     }
 
     @Test
+    @DisplayName("Tests whether the correct customer type is returned")
     void getKundentyp() {
         assertEquals("Frau", car.getKundentyp());
     }
