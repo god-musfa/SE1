@@ -4,7 +4,7 @@ import base.TicketIF;
 
 import java.util.List;
 
-public abstract class IncomeStatistic implements IncomeStatisticIF {
+public abstract class EinnahmenStatistik implements EinnahmenStatistikIF {
     protected long letztesAusgefahrenesTicket;
     @Override
     public final double statistikErstellen(List<TicketIF> tickets) {
