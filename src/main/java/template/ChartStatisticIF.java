@@ -6,8 +6,12 @@ import jakarta.json.JsonObject;
 import java.util.List;
 
 public interface ChartStatisticIF {
-    JsonObject statistikErstellen(List<CarIF> car);
-    List<Integer> valueBerechnen(List<CarIF> car, List<String> label);
-    List<String> labelBerechnen(List<CarIF> car);
-    JsonObject statistikAnzeigen(List<String> a, List<Integer> b);
+    JsonObject createPieStatisticsJSON(List<CarIF> car);
+    List<Integer> calcValues(List<CarIF> car, List<String> label);
+    List<String> calcValues(List<CarIF> car);
+
+    JsonObject createBarStatisticsJSON(List<CarIF> car);
+
+    JsonObject buildPieChart(List<String> a, List<Integer> b);
+    JsonObject buildBarChart(List<String> a, List<Integer> b);
 }

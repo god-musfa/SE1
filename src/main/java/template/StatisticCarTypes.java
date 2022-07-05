@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class StatisticCarTypes extends ChartStatistic {
     @Override
-    public List<Integer> valueBerechnen(List<CarIF> car, List<String> label) {
+    public List<Integer> calcValues(List<CarIF> car, List<String> label) {
         List<Integer> count = new ArrayList<>();
         for(String strings: label){
             count.add((int) car.stream()
@@ -19,7 +19,7 @@ public class StatisticCarTypes extends ChartStatistic {
     }
 
     @Override
-    public List<String> labelBerechnen(List<CarIF> car) {
+    public List<String> calcValues(List<CarIF> car) {
         return car.stream().map(CarIF::getVehicleType).distinct().collect(Collectors.toList());
     }
 }

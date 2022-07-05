@@ -53,7 +53,7 @@ class StatisticCarTypesTest {
     @Test
     void createPieChart() {
         String test = "{\"data\":[{\"values\":" + Json.createArrayBuilder(nums).build().toString()+",\"labels\":" + Json.createArrayBuilder(strings).build().toString() +",\"type\":\"pie\"}]}";
-        assertEquals(test,sct.statistikAnzeigen(strings,nums).toString());
+        assertEquals(test,sct.buildPieChart(strings,nums).toString());
     }
 
     @Test
@@ -62,7 +62,7 @@ class StatisticCarTypesTest {
     valueVergleich.add(3);
     valueVergleich.add(2);
 
-    values = statistic.valueBerechnen(testvalues, statistic.labelBerechnen(testvalues));
+    values = statistic.calcValues(testvalues, statistic.calcValues(testvalues));
     assertEquals(valueVergleich, values);
     }
 
@@ -70,7 +70,7 @@ class StatisticCarTypesTest {
     void labelBerechnen() {
         vergleichslisteWahr = new ArrayList<>(List.of("Pkw","Suv"));
         vergleichslisteFalsch = new ArrayList<>(List.of("Pkw","Suv","Zweirad"));
-        labels = statistic.labelBerechnen(testvalues);
+        labels = statistic.calcValues(testvalues);
 
         assertEquals(vergleichslisteWahr,labels);
         assertNotEquals(vergleichslisteFalsch,labels);
@@ -79,14 +79,24 @@ class StatisticCarTypesTest {
     @Test
     @DisplayName("Tests output string of a filled statistic")
     void statistikErstellenTest() {
-        assertEquals("{\"data\":[{\"values\":[3,2],\"labels\":[\"Pkw\",\"Suv\"],\"type\":\"pie\"}]}",sct.statistikErstellen(testvalues).toString());
+        assertEquals("{\"data\":[{\"values\":[3,2],\"labels\":[\"Pkw\",\"Suv\"],\"type\":\"pie\"}]}",sct.createPieStatisticsJSON(testvalues).toString());
     }
 
     @Test
     @DisplayName("Tests the output string of an empty statistic")
     void statistikErstellenTest2() {
         List<CarIF> tv = new ArrayList<>();
-        assertEquals("{\"data\":[{\"values\":[],\"labels\":[],\"type\":\"pie\"}]}",sct.statistikErstellen(tv).toString());
+        assertEquals("{\"data\":[{\"values\":[],\"labels\":[],\"type\":\"pie\"}]}",sct.createPieStatisticsJSON(tv).toString());
     }
+    @Test
+    void barChartTest(){
+        assertEquals("{\"data\":[{\"values\":[3,2],\"labels\":[\"Pkw\",\"Suv\"],\"type\":\"bar\"}]}",sct.createBarStatisticsJSON(testvalues).toString());
 
+    }
+    @Test
+    void barChartTest2(){
+        List<CarIF> tv = new ArrayList<>();
+        assertEquals("{\"data\":[{\"values\":[],\"labels\":[],\"type\":\"bar\"}]}",sct.createBarStatisticsJSON(tv).toString());
+
+    }
 }
