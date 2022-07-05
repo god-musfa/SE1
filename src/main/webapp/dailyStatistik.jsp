@@ -32,6 +32,7 @@
     <title>Title</title>
 </head>
 <body>
+<a href="kasse.jsp">zurück zur Kasse</a>
 <table class="center" style="width:50%">
     <caption>Daily and Weekly Income</caption>
     <tr>

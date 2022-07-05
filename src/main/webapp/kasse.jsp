@@ -15,8 +15,8 @@
 <h1><%= "Parkhaus Kasse" %></h1>
 <div>
     <select id="statistik" name="statistikliste" form="statistikchoose">
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
+            <option value="parkhausetage1">Parkhaus Etage 1</option>
+            <option value="parkhausetage2">Parkhaus Etage 2</option>
     </select>
     <form action="pay-servlet"  method="get" id="statistikchoose">
             <input type="submit">
