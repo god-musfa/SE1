@@ -1,7 +1,6 @@
 package template;
 
 import base.Car;
-import mvc.DailyIncomeView;
 import mvc.IControllerInterface;
 import mvc.IModelInterface;
 
