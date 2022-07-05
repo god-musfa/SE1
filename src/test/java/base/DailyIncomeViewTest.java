@@ -41,7 +41,7 @@ class DailyIncomeViewTest {
         wi.enterCar(c1);
         wi.enterCar(c2);
         wi.enterCar(c3);
-        assertEquals(2001.00,wi.getDailyIncome());
+        assertEquals(20.01,wi.getDailyIncome());
 
     }
 

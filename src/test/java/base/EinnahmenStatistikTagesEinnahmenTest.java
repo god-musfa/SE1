@@ -23,8 +23,8 @@ StatistikTagesEinnahmen tages;
         long unix = 1654704862;
         tickets.get(0).setDuration(unix);
         tickets.get(1).setDuration(unix);
-        tickets.get(2).setDuration(unix+86500);
-        tickets.get(3).setDuration(unix+86500);
+        tickets.get(2).setDuration(unix+86400000);
+        tickets.get(3).setDuration(unix+86400500);
 
         tickets.get(0).setPrice(100.0);
         tickets.get(1).setPrice(200.0);

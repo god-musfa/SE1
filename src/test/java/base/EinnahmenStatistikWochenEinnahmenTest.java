@@ -26,9 +26,9 @@ class EinnahmenStatistikWochenEinnahmenTest {
         tickets.get(0).setDuration(unix);
         tickets.get(1).setDuration(unix);
         tickets.get(2).setDuration(unix+86500);
-        tickets.get(3).setDuration(unix+87200);
-        tickets.get(4).setDuration(unix+604800);
-        tickets.get(5).setDuration(unix+692000);
+        tickets.get(3).setDuration(unix+872000000);
+        tickets.get(4).setDuration(unix+604800000);
+        tickets.get(5).setDuration(unix+692000000);
 
 
         tickets.get(0).setPrice(100.0);

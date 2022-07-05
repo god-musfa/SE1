@@ -27,19 +27,19 @@ class WeeklyIncomeViewTest {
         c1 = new Car(st1);
         c2 = new Car(st2);
         c3 = new Car(st3);
-        c1.getTicket().setPrice(101);
+        c1.getTicket().setPrice(100);
         c2.getTicket().setPrice(1500);
         c3.getTicket().setPrice(400);
         c1.getTicket().setDuration(0);
         c2.getTicket().setDuration(0);
-        c3.getTicket().setDuration(86401);
+        c3.getTicket().setDuration(864005);
     }
     @Test
     void update() {
         wi.enterCar(c1);
         wi.enterCar(c2);
         wi.enterCar(c3);
-        assertEquals(400.00,wi.getWeeklyIncome());
+        assertEquals(20.0,wi.getWeeklyIncome());
 
     }
 
