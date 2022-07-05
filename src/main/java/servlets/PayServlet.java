@@ -1,7 +1,9 @@
 package servlets;
 
+import jakarta.json.JsonObject;
 import mvc.DailyIncomeView;
 import mvc.WeeklyIncomeView;
+import template.ChartStatisticsCarTypesView;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +19,7 @@ public class PayServlet extends HttpServlet {
         String etageChoosen = request.getParameter("statistikliste");
         DailyIncomeView dIV = null;
         WeeklyIncomeView wIV = null;
-
+        ChartStatisticsCarTypesView cST = (ChartStatisticsCarTypesView) getServletContext().getAttribute("ChartStatisticsView");
         if(etageChoosen.equals("parkhausetage1")) {
              dIV = (DailyIncomeView) getServletContext().getAttribute("Level1Daily");
              wIV = (WeeklyIncomeView) getServletContext().getAttribute("Level1Weekly");
@@ -30,6 +32,7 @@ public class PayServlet extends HttpServlet {
         HttpSession ss = request.getSession();
         ss.setAttribute("dIV",dIV);
         ss.setAttribute("wIV",wIV);
+        ss.setAttribute("ChartView",cST);
         response.sendRedirect("dailyStatistik.jsp");
 
 

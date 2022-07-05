@@ -7,13 +7,13 @@ import mvc.IControllerInterface;
 import mvc.IModelInterface;
 import mvc.IObserverInterface;
 
-public class ChartStatisticView implements IObserverInterface {
+public class ChartStatisticsCarTypesView implements IObserverInterface {
     private IControllerInterface pController;
     private IModelInterface pModel;
     private StatisticCarTypes s = new StatisticCarTypes();
     private JsonObject jo = Json.createObjectBuilder().build();
 
-    public ChartStatisticView(IModelInterface model) {
+    public ChartStatisticsCarTypesView(IModelInterface model) {
         pModel = model;
         model.registerObserver (this);
         pController = new ChartStatisticController(model, this);

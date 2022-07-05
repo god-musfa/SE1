@@ -2,15 +2,14 @@ package template;
 
 import base.Car;
 import base.Parkhaus;
-import mvc.DailyIncomeView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ChartStatisticViewTest {
+class ChartStatisticsCarTypesViewTest {
     Parkhaus ph;
-    ChartStatisticView wi;
+    ChartStatisticsCarTypesView wi;
     Car c1;
     Car c2;
     Car c3;
@@ -21,7 +20,7 @@ class ChartStatisticViewTest {
     @BeforeEach
     void setUp() {
         ph = new Parkhaus(15);
-        wi = new ChartStatisticView(ph);
+        wi = new ChartStatisticsCarTypesView(ph);
         st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","Frau","SUV"};
         st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","Parkhauskunde","SUV"};
         st3 = new String[]{"3", "2", "3","ab","af","faff","ffgg","Frau","PKW"};

@@ -47,7 +47,7 @@
     <p>Tomcat Version : <%= application.getServerInfo() %></p>
 </div>
 <div class="box lightblue">
-    <h2><a href="kasse.jsp">Kasse</a></h2>
+    <h2><a href="kasse.jsp">Statistics</a></h2>
 </div>
 <div class="box lightyellow">
     <h1>Parkhaus Etage 1</h1>

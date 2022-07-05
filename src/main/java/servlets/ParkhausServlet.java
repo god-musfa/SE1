@@ -12,6 +12,7 @@ import base.Parkhaus;
 import helper.ButtonCalc;
 import mvc.DailyIncomeView;
 import mvc.WeeklyIncomeView;
+import template.ChartStatisticsCarTypesView;
 import template.StatisticCarTypes;
 import base.Car;
 import base.CarIF;
@@ -30,6 +31,8 @@ public abstract class ParkhausServlet extends HttpServlet {
     Parkhaus parkhaus;
     DailyIncomeView dV;
     WeeklyIncomeView wV;
+    ChartStatisticsCarTypesView cST;
+    StatisticCarTypes sct;
     /**
      * HTTP GET
      */
@@ -44,9 +47,11 @@ public abstract class ParkhausServlet extends HttpServlet {
                 // Overwrite Parkhaus config parameters
                 // Max, open_from, open_to, delay, simulation_speed
                 out.println( config() );
-                if (dV == null && wV == null){
+                if (dV == null && wV == null && cST == null){
                     dV = new DailyIncomeView(parkhaus);
                     wV = new WeeklyIncomeView(parkhaus);
+                    cST = new ChartStatisticsCarTypesView(parkhaus);
+                    getContext().setAttribute("ChartStatisticsView",cST);
                     getContext().setAttribute(name()+"Daily",dV);
                     getContext().setAttribute(name()+"Weekly",wV);
                 }
@@ -65,9 +70,15 @@ public abstract class ParkhausServlet extends HttpServlet {
                 out.println(ButtonCalc.calcMax(parkhaus.getCarsList())/100);
                 break;
             case "cars":
+                // Cars are separated by comma.
+                // Values of a single car are separated by slash.
+                // Format: Nr, timer begin, duration, price, Ticket, color, space, client category, vehicle type, license (PKW Kennzeichen)
+                // For example:
+                // out.println("1/1648465400000/_/_/Ticket1/#0d1e0a/2/any/PKW/1,2/1648465499999/_/_/Ticket2/#dd10aa/3/any/PKW/2");
                 out.println(parkhaus.carsListToString());
                 break;
             case "chart":
+                sct = new StatisticCarTypes();
                 StatisticCarTypes sct = new StatisticCarTypes();
                 out.println(sct.createPieStatisticsJSON(parkhaus.getCarsList()));
                 break;

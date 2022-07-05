@@ -7,10 +7,10 @@ import mvc.IModelInterface;
 public class ChartStatisticController implements IControllerInterface {
 
     private IModelInterface mModel;
-    private ChartStatisticView mTableView;
+    private ChartStatisticsCarTypesView mTableView;
 
     public ChartStatisticController (IModelInterface model,
-                                     ChartStatisticView tableView)
+                                     ChartStatisticsCarTypesView tableView)
     {
         mTableView = tableView;
         mModel = model;
