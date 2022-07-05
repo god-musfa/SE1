@@ -1,7 +1,6 @@
 package mvc;
 
 import base.Car;
-import template.StatistikTagesEinnahmen;
 import template.StatistikWochenEinnahmen;
 
 public class WeeklyIncomeView implements IObserverInterface {

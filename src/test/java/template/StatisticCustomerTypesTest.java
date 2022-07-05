@@ -29,8 +29,8 @@ class StatisticCustomerTypesTest {
         String[] st1 = new String[]{"1", "2", "3", "ab","as","das","sdaa","Frau","Pkw"};
         String[] st2 = new String[]{"2", "2", "3","ab","ad","sda1","daff","Abonnent","Suv"};
 
-        nums = new ArrayList<>(List.of(new Integer[]{1, 2, 3, 4, 5}));
-        strings = new ArrayList<>(List.of(new String[]{"a", "b", "c", "d", "e"}));
+        nums = new ArrayList<>(List.of(1, 2, 3, 4, 5));
+        strings = new ArrayList<>(List.of("a", "b", "c", "d", "e"));
 
         Car testcar1 = new Car(st1);
         Car testcar2 = new Car(st2);
@@ -62,8 +62,8 @@ class StatisticCustomerTypesTest {
 
     @Test
     void labelBerechnen() {
-        vergleichslisteWahr = new ArrayList<>(List.of(new String[]{"Frau","Abonnent"}));
-        vergleichslisteFalsch = new ArrayList<>(List.of(new String[]{"Familie","Parkhauskunde","Firmenkunde"}));
+        vergleichslisteWahr = new ArrayList<>(List.of("Frau","Abonnent"));
+        vergleichslisteFalsch = new ArrayList<>(List.of("Familie","Parkhauskunde","Firmenkunde"));
         labels = statistic.calcValues(testvalues);
 
         assertEquals(vergleichslisteWahr,labels);

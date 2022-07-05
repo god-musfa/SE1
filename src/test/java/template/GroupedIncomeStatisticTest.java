@@ -47,14 +47,14 @@ class GroupedIncomeStatisticTest {
 
     @Test
     void calcValues() {
-        assertEquals(List.of(new String[]{"5", "10", "15"}),statistic.calcValues(testvalues));
+        assertEquals(List.of("5", "10", "15"),statistic.calcValues(testvalues));
 
     }
 
     @Test
     void testCalcValues() {
        List<Integer> res = statistic.calcValues(testvalues,statistic.calcValues(testvalues));
-       assertEquals(List.of(new Integer[]{1,3,1}),res);
+       assertEquals(List.of(1,3,1),res);
     }
 
     @Test
