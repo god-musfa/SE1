@@ -12,15 +12,17 @@
     DailyIncomeView dIV = (DailyIncomeView) session.getAttribute("dIV");
     WeeklyIncomeView wIV = (WeeklyIncomeView) session.getAttribute("wIV");
 %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Title</title>
 </head>
 <body>
 <table>
+    <caption>Daily and Weekly Income</caption>
     <tr>
-        <th>Daily Income</th>
-        <th>Weekly Income</th>
+        <th id="daily">Daily Income</th>
+        <th id="weekly">Weekly Income</th>
     </tr>
     <tr>
         <td><%= Math.round(dIV.getDailyIncome()) %></td>
