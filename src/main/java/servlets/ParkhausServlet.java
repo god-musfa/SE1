@@ -51,7 +51,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                     dV = new DailyIncomeView(parkhaus);
                     wV = new WeeklyIncomeView(parkhaus);
                     cST = new ChartStatisticsCarTypesView(parkhaus);
-                    getContext().setAttribute("ChartStatisticsView",cST);
+                    getContext().setAttribute(name()+"ChartStatisticsView",cST);
                     getContext().setAttribute(name()+"Daily",dV);
                     getContext().setAttribute(name()+"Weekly",wV);
                 }

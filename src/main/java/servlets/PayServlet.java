@@ -19,14 +19,17 @@ public class PayServlet extends HttpServlet {
         String etageChoosen = request.getParameter("statistikliste");
         DailyIncomeView dIV = null;
         WeeklyIncomeView wIV = null;
-        ChartStatisticsCarTypesView cST = (ChartStatisticsCarTypesView) getServletContext().getAttribute("ChartStatisticsView");
+        ChartStatisticsCarTypesView cST = null;
         if(etageChoosen.equals("parkhausetage1")) {
              dIV = (DailyIncomeView) getServletContext().getAttribute("Level1Daily");
              wIV = (WeeklyIncomeView) getServletContext().getAttribute("Level1Weekly");
+             cST = (ChartStatisticsCarTypesView) getServletContext().getAttribute("Level1ChartStatisticsView");
         }
         if(etageChoosen.equals("parkhausetage2")){
              dIV = (DailyIncomeView) getServletContext().getAttribute("Level2Daily");
              wIV = (WeeklyIncomeView) getServletContext().getAttribute("Level2Weekly");
+             cST = (ChartStatisticsCarTypesView) getServletContext().getAttribute("Level2ChartStatisticsView");
+
         }
 
         HttpSession ss = request.getSession();
