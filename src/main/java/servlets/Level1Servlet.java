@@ -21,7 +21,6 @@ public class Level1Servlet extends ParkhausServlet {
     String config(){
         if (this.parkhaus == null) {
             this.parkhaus = new Parkhaus(10); //initial Size for Parkhause Etage 1
-            getContext().setAttribute("Etage1",this.parkhaus);
         }
         return this.MAX()+",6,24,50,7000"; // config
         // Config Format is "Max, open_from, open_to, delay, simulation_speed"
