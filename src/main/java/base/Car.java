@@ -11,7 +11,7 @@ public class Car implements CarIF {
     Ticket t;
     public Car( String[] params ){
         this.params = params;
-        ft = FahrzeugtypHelper.getCar(this.params[8]);
+        ft = FahrzeugtypHelper.getFahrzeug(this.params[8]);
         t = new Ticket(this.params[4], this.params[1]);
     }
 
@@ -62,7 +62,7 @@ public class Car implements CarIF {
         return sb.toString();
     }
 
-    public void setParkingSpotNumber(int n){
+    public void setParkplatzNumber(int n){
         this.params[6] = ""+n;
     }
 }

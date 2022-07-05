@@ -1,13 +1,13 @@
 package mvc;
 
 import base.Car;
-import template.DailyIncomeStatistic;
+import template.StatistikTagesEinnahmen;
 
 public class DailyIncomeView implements IObserverInterface {
     private IControllerInterface pController;
     private IModelInterface pModel;
     private double income = 0;
-    private DailyIncomeStatistic s = new DailyIncomeStatistic();
+    private StatistikTagesEinnahmen s = new StatistikTagesEinnahmen();
     public DailyIncomeView(IModelInterface model){
         pModel = model;
         model.registerObserver (this);

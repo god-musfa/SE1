@@ -11,7 +11,7 @@ public interface ParkhausIF {
     int enter(CarIF c);
 
     double leave(int nr,long duration);
-    int getParkingSpotSize();
+    int getParkplatzSize();
     CarIF[] getCars();
 
     List<TicketIF> getTicket();
