@@ -34,7 +34,7 @@ class ParkhausTest {
     }
 
     @Test
-    @DisplayName("Testet ob Autos korrekt dem Parkhaus hinzugefuegt werden")
+    @DisplayName("Tests if cars are correctly added to the parking garage")
     void enterTest() {
         assertEquals(1,ph.enter(c1));
         assertEquals(2,ph.enter(c2));
@@ -42,7 +42,7 @@ class ParkhausTest {
     }
 
     @Test
-    @DisplayName("Testet ob Autos korrekt aus dem Parkhaus entfernt werden")
+    @DisplayName("Tests whether cars are correctly removed from the parking garage")
     void leaveTest() {
         ph.enter(c1);
         ph.enter(c2);
@@ -54,19 +54,19 @@ class ParkhausTest {
     }
 
     @Test
-    @DisplayName("Testet ob Autos rausfahren koennen obwohl das Parkhaus leer ist." )
+    @DisplayName("Tests whether cars can drive out although the parking garage is empty" )
     void leaveTest2() {
         assertEquals(-1.00,ph.leave(1,0));
     }
     @Test
-    @DisplayName("Testet ob Autos rausfahren koennen obwohl sie nicht im Parkhaus sind." )
+    @DisplayName("Tests whether cars can drive out although they are not in the parking garage" )
     void leaveTest3() {
         ph.enter(c1);
         assertEquals(-1.00,ph.leave(2,0));
     }
 
     @Test
-    @DisplayName("Prueft ob Autos an erwarteter Position eingefuegt werden")
+    @DisplayName("Checks whether cars are inserted at the expected position")
     void leaveEnterTest() {
         ph.enter(c1);
         ph.enter(c2);
@@ -75,18 +75,8 @@ class ParkhausTest {
         assertEquals(c3.getNr(),ph.getCars()[0].getNr());
     }
 
-    @AfterEach
-    void tearDown() {
-        st1 = null;
-        st2 = null;
-        st3 = null;
-        ph = null;
-        c1 = null;
-        c2 = null;
-        c3 = null;
-    }
-
     @Test
+    @DisplayName("Checks for correct TicketID")
     void getTicket() {
         ph.enter(c1);
         ph.enter(c2);
@@ -99,6 +89,7 @@ class ParkhausTest {
 
 
     @Test
+    @DisplayName("Checks the correctness of the vehicle list")
     void getCarsList() {
         ph.enter(c1);
         ph.enter(c2);
@@ -113,26 +104,21 @@ class ParkhausTest {
     }
 
     @Test
+    @DisplayName("Check parking lot size")
     void getParkplatzSize() {
         assertEquals(15,ph.getParkplatzSize());
     }
 
-    @Test
-    void changeMax() {
-        assertEquals(15,ph.getParkplatzSize());
-        ph.changeMax(13);
-        assertEquals(13,ph.getParkplatzSize());
-    }
-
     @ParameterizedTest
     @ValueSource(ints = {0,5,20})
-    @DisplayName("Prueft die Veraenderung der maximalen Parkplaetze")
+    @DisplayName("Checks the change in maximum parking spaces")
     void changeMaxTest(int w) {
         ph.changeMax(w);
         assertEquals(w, ph.getParkplatzSize());
     }
 
     @Test
+    @DisplayName("Checks correctness of cars to string")
     void carsListToString() {
     assertEquals("",ph.carsListToString());
 
@@ -142,7 +128,9 @@ class ParkhausTest {
     ph.enter(c2);
     assertEquals(c1.toStringSeperatedBySlash()+","+c2.toStringSeperatedBySlash(),ph.carsListToString());
     }
+
     @Test
+    @DisplayName("Tests output with full parking lot")
     void enterFullParkhaus(){
         ph = new Parkhaus(2);
         ph.enter(c1);
@@ -152,6 +140,7 @@ class ParkhausTest {
     }
 
     @Test
+    @DisplayName("Checks the reset function for correctness")
     void reset() {
         ph.enter(c1);
         ph.enter(c2);
@@ -162,5 +151,17 @@ class ParkhausTest {
 
         assertNull(ph.getCars()[0]);
         assertEquals(true,ph.getCarsList().isEmpty());
+    }
+
+
+    @AfterEach
+    void tearDown() {
+        st1 = null;
+        st2 = null;
+        st3 = null;
+        ph = null;
+        c1 = null;
+        c2 = null;
+        c3 = null;
     }
 }
