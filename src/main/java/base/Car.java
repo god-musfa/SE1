@@ -28,12 +28,12 @@ public class Car implements CarIF {
 
 
     public String getVehicleType(){
-        return ParamsHelper.getVehicle_type(this.params);
+        return ParamsHelper.getVehicleType(this.params);
     }
 
     @Override
     public String getKundentyp() {
-        return ParamsHelper.getClient_category(this.params);
+        return ParamsHelper.getClientCategory(this.params);
     }
     public int getSpace(){
         return Integer.parseInt(ParamsHelper.getSpace(this.params));
