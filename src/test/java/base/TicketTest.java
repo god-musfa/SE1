@@ -25,10 +25,18 @@ class TicketTest {
         ticket3.setDuration(7200);
     }
 
+    @Test
+    @DisplayName("Checks getTicketID")
+    void getTicketID() {
+        assertEquals("1",ticket1.getTicketID());
+        assertEquals("2",ticket2.getTicketID());
+        assertEquals("3",ticket3.getTicketID());
+    }
+
     @ParameterizedTest
     @DisplayName("Checks price calculation for different Customer Types")
     @CsvSource({"Parkhauskunde, 400.0, 1800.0, 10800.0", "Behinderte, 200.0, 900.0, 5400.0", "Abonnent, 0.0, 0.0, 0.0" })
-    void setPrice3(String s, double price1, double price2, double price3) {
+    void setPrice(String s, double price1, double price2, double price3) {
         ticket1.setPrice(FahrzeugtypHelper.getFahrzeug("PKW"), KundentypHelper.getKunde(s),400000);
         assertEquals(price1,Math.round(ticket1.getPrice()*100)/100);
         ticket2.setPrice(FahrzeugtypHelper.getFahrzeug("Zweirad"),KundentypHelper.getKunde(s),3600000);
@@ -40,7 +48,7 @@ class TicketTest {
     @ParameterizedTest
     @DisplayName("Checks price calculation for different Vehicle Types")
     @CsvSource({"PKW, 400.0, 1800.0, 0.0", "Zweirad, 200.0, 900.0, 0.0", "Pickup, 600.0, 2700.0, 0.0" })
-    void setPrice(String s, double price1, double price2, double price3) {
+    void setPrice2(String s, double price1, double price2, double price3) {
         ticket1.setPrice(FahrzeugtypHelper.getFahrzeug(s), KundentypHelper.getKunde("Parkhauskunde"),400000);
         assertEquals(price1,Math.round(ticket1.getPrice()*100)/100);
         ticket2.setPrice(FahrzeugtypHelper.getFahrzeug(s),KundentypHelper.getKunde("Behinderte"),3600000);
