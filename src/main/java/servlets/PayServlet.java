@@ -1,6 +1,5 @@
 package servlets;
 
-import jakarta.json.JsonObject;
 import mvc.DailyIncomeView;
 import mvc.WeeklyIncomeView;
 import template.ChartStatisticsCarTypesView;
