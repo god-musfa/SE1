@@ -24,8 +24,8 @@ public abstract class ParkhausServlet extends HttpServlet {
     //TODO MVC Parkhaus Model
 
     /* abstract methods, to be defined in subclasses */
-    abstract String NAME(); // each ParkhausServlet should have a name, e.g. "Level1"
-    abstract int MAX(); // maximum number of parking slots of a single parking level
+    abstract String name(); // each ParkhausServlet should have a name, e.g. "Level1"
+    abstract int max(); // maximum number of parking slots of a single parking level
     abstract String config(); // configuration of a single parking level
     Parkhaus parkhaus;
     DailyIncomeView dV;
@@ -44,11 +44,11 @@ public abstract class ParkhausServlet extends HttpServlet {
                 // Overwrite Parkhaus config parameters
                 // Max, open_from, open_to, delay, simulation_speed
                 out.println( config() );
-                if (dV == null & wV == null){
+                if (dV == null && wV == null){
                     dV = new DailyIncomeView(parkhaus);
                     wV = new WeeklyIncomeView(parkhaus);
-                    getContext().setAttribute(NAME()+"Daily",dV);
-                    getContext().setAttribute(NAME()+"Weekly",wV);
+                    getContext().setAttribute(name()+"Daily",dV);
+                    getContext().setAttribute(name()+"Weekly",wV);
                 }
                 break;
             case "sum":
@@ -65,11 +65,6 @@ public abstract class ParkhausServlet extends HttpServlet {
                 out.println(ButtonCalc.calcMax(parkhaus.getCarsList()));
                 break;
             case "cars":
-                // Cars are separated by comma.
-                // Values of a single car are separated by slash.
-                // Format: Nr, timer begin, duration, price, Ticket, color, space, client category, vehicle type, license (PKW Kennzeichen)
-                // For example:
-                // out.println("1/1648465400000/_/_/Ticket1/#0d1e0a/2/any/PKW/1,2/1648465499999/_/_/Ticket2/#dd10aa/3/any/PKW/2");
                 out.println(parkhaus.carsListToString());
                 break;
             case "chart":
@@ -82,6 +77,7 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "reset":
                 parkhaus.reset();
+                break;
             default:
                 System.out.println("Invalid Command: " + request.getQueryString());
         }

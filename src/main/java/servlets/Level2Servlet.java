@@ -8,12 +8,12 @@ import javax.servlet.annotation.WebServlet;
 public class Level2Servlet extends ParkhausServlet {
 
     @Override
-    String NAME(){
+    String name(){
         return "Level2";
     }
 
     @Override
-    int MAX(){ // maximum number of parking slots on level 2
+    int max(){ // maximum number of parking slots on level 2
         return this.parkhaus.getParkplatzSize();
     }
 
@@ -22,7 +22,7 @@ public class Level2Servlet extends ParkhausServlet {
         if (parkhaus == null) {
             this.parkhaus = new Parkhaus(14); //initial Size for Parkhause Etage 2
         }
-        return this.MAX()+",0,24,100,10"; // config
+        return this.max()+",0,24,100,10"; // config
         // Config Format is "Max, open_from, open_to, delay, simulation_speed"
     }
 
