@@ -14,7 +14,7 @@ public class Level2Servlet extends ParkhausServlet {
 
     @Override
     int max(){ // maximum number of parking slots on level 2
-        return this.parkhaus.getParkingSpotSize();
+        return this.parkhaus.getParkplatzSize();
     }
 
     @Override

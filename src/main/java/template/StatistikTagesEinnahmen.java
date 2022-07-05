@@ -4,7 +4,7 @@ import base.TicketIF;
 
 import java.util.List;
 
-public class DailyIncomeStatistic extends IncomeStatistic {
+public class StatistikTagesEinnahmen extends EinnahmenStatistik {
     @Override
     public double valueBerechnen(List<TicketIF> tickets) {
         int tagInUnix = 86400000;
