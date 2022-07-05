@@ -53,7 +53,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             if(cars[i]==null){
                 continue;
             }
-            if ((cars[i].getNr() == nr && cars[i] != null)){
+            if (cars[i].getNr() == nr){
                 CarIF car = cars[i];
                 car.getTicket().setPrice(FahrzeugtypHelper.getFahrzeug(car.getVehicleType()), KundentypHelper.getKunde(car.getKundentyp()),duration);
                 double price = car.getTicket().getPrice();
