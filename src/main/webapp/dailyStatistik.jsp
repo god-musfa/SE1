@@ -15,10 +15,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th,td{
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
-<table>
+<table class="center" style="width:50%">
     <caption>Daily and Weekly Income</caption>
     <tr>
         <th id="daily">Daily Income</th>
