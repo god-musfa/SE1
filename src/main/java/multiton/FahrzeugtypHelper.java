@@ -23,7 +23,7 @@ public class FahrzeugtypHelper {
      * @param st String with vehicle type designation
      * @return Vehicle type object or null
      */
-    public static Fahrzeugtyp getFahrzeug(String st) {
+    public static Fahrzeugtyp getCar(String st) {
         return ftyp.get(st);
     }
 }
