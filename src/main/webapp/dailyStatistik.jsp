@@ -25,8 +25,8 @@
         <th id="weekly">Weekly Income</th>
     </tr>
     <tr>
-        <td><%= Math.round(dIV.getDailyIncome()) %></td>
-        <td><%= Math.round(wIV.getWeeklyIncome()) %></td>
+        <td><%= Math.round(dIV.getDailyIncome()*100.0)/100.0 %></td>
+        <td><%= Math.round(wIV.getWeeklyIncome()*100.0)/100.0 %></td>
     </tr>
 </table>
 </body>
