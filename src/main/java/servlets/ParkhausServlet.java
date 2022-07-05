@@ -57,24 +57,19 @@ public abstract class ParkhausServlet extends HttpServlet {
                 }
                 break;
             case "sum":
-                out.println(ButtonCalc.calcSum(parkhaus.getCarsList())/100);
+                out.println(Math.round(ButtonCalc.calcSum(parkhaus.getCarsList())* 100)/10000);
                 break;
             case "avg":
-                out.println("Price: " + ButtonCalc.calcAvgPrice(parkhaus.getCarsList())/100);
-                out.println(" Duration: " + ButtonCalc.calcAvgDuration(parkhaus.getCarsList())/100);
+                out.println("Price: " + Math.round(ButtonCalc.calcAvgPrice(parkhaus.getCarsList())* 100)/10000);
+                out.println(" Duration: " + ButtonCalc.calcAvgDuration(parkhaus.getCarsList())/1000);
                 break;
             case "min":
-                out.println(ButtonCalc.calcMin(parkhaus.getCarsList())/100);
+                out.println(Math.round(ButtonCalc.calcMin(parkhaus.getCarsList())* 100)/10000);
                 break;
             case "max":
-                out.println(ButtonCalc.calcMax(parkhaus.getCarsList())/100);
+                out.println(Math.round(ButtonCalc.calcMax(parkhaus.getCarsList())* 100)/10000);
                 break;
             case "cars":
-                // Cars are separated by comma.
-                // Values of a single car are separated by slash.
-                // Format: Nr, timer begin, duration, price, Ticket, color, space, client category, vehicle type, license (PKW Kennzeichen)
-                // For example:
-                // out.println("1/1648465400000/_/_/Ticket1/#0d1e0a/2/any/PKW/1,2/1648465499999/_/_/Ticket2/#dd10aa/3/any/PKW/2");
                 out.println(parkhaus.carsListToString());
                 break;
             case "chart":
