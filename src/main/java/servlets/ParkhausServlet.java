@@ -22,7 +22,6 @@ import base.CarIF;
  * groups all auxiliary common methods used in all servlets
  */
 public abstract class ParkhausServlet extends HttpServlet {
-    //TODO MVC Parkhaus Model
 
     /* abstract methods, to be defined in subclasses */
     abstract String name(); // each ParkhausServlet should have a name, e.g. "Level1"
