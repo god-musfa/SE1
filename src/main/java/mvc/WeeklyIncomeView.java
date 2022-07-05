@@ -2,12 +2,13 @@ package mvc;
 
 import base.Car;
 import template.StatistikTagesEinnahmen;
+import template.StatistikWochenEinnahmen;
 
 public class WeeklyIncomeView implements IObserverInterface {
     private IControllerInterface pController;
     private IModelInterface pModel;
     private double income = 0;
-    private StatistikTagesEinnahmen s = new StatistikTagesEinnahmen();
+    private StatistikWochenEinnahmen s = new StatistikWochenEinnahmen();
     public WeeklyIncomeView(IModelInterface model){
         pModel = model;
         model.registerObserver (this);
@@ -22,7 +23,7 @@ public class WeeklyIncomeView implements IObserverInterface {
     }
     @Override
     public void update() {
-        income = s.statistikErstellen(pModel.getTicket());
+        income = s.statistikErstellen(pModel.getTicket())/100;
     }
     public double getWeeklyIncome(){
         return income;

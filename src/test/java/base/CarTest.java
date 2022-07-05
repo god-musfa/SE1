@@ -9,22 +9,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class CarTest {
     CarIF car;
     String[] params;
+
     @BeforeEach
-    void setUp(){
-        params = new String[]{"6","1651072643184","_","19","058e845e583d91de30e47b1f49c41411","#7eecf5","1","Frau","SUV","SU-Z 15"};
+    void setUp() {
+        params = new String[]{"6", "1651072643184", "_", "19", "058e845e583d91de30e47b1f49c41411", "#7eecf5", "1", "Frau", "SUV", "SU-Z 15"};
         car = new Car(params);
     }
 
     @Test
     @DisplayName("Tests whether car.nr returns right value")
     void nrTest() {
-        assertEquals(6,car.getNr());
+        assertEquals(6, car.getNr());
     }
 
     @Test
     @DisplayName("Tests the ticketId is saved right in the creationprocess")
-    void ticketCreation(){
-        assertEquals("058e845e583d91de30e47b1f49c41411",car.getTicket().getTicketID());
+    void ticketCreation() {
+        assertEquals("058e845e583d91de30e47b1f49c41411", car.getTicket().getTicketID());
     }
 
     @Test
@@ -34,43 +35,42 @@ class CarTest {
 
     @Test
     void toStringSeperatedBySlash() {
-        assertEquals("6/1651072643184/0/0.0/058e845e583d91de30e47b1f49c41411/#7eecf5/1/Frau/SUV/SU-Z 15",car.toStringSeperatedBySlash());
+        assertEquals("6/1651072643184/0/0.0/058e845e583d91de30e47b1f49c41411/#7eecf5/1/Frau/SUV/SU-Z 15", car.toStringSeperatedBySlash());
     }
 
     @Test
     void setParkplatzNumber() {
         car.setParkplatzNumber(2);
-        assertEquals(2,car.getSpace());
+        assertEquals(2, car.getSpace());
     }
 
     @Test
     void getNr() {
-        assertEquals(6,car.getNr());
+        assertEquals(6, car.getNr());
     }
 
     @Test
     void getTimer() {
-        assertEquals((Long.parseLong("1651072643184")),car.getTimer());
+        assertEquals((Long.parseLong("1651072643184")), car.getTimer());
     }
 
     @Test
     void getColor() {
-        assertEquals("#7eecf5",car.getColor());
+        assertEquals("#7eecf5", car.getColor());
     }
 
     @Test
     void getVehicleType() {
-        assertEquals("SUV",car.getVehicleType());
+        assertEquals("SUV", car.getVehicleType());
     }
 
     @Test
     void getSpace() {
-        assertEquals(1,car.getSpace());
+        assertEquals(1, car.getSpace());
     }
 
     @Test
     void getLicense() {
-        assertEquals("SU-Z 15",car.getLicense());
+        assertEquals("SU-Z 15", car.getLicense());
     }
-
 }

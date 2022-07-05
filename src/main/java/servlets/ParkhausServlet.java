@@ -10,6 +10,8 @@ import java.util.*;
 
 import base.Parkhaus;
 import helper.ButtonCalc;
+import mvc.DailyIncomeView;
+import mvc.WeeklyIncomeView;
 import template.StatisticCarTypes;
 import base.Car;
 import base.CarIF;
@@ -20,13 +22,14 @@ import base.CarIF;
  */
 public abstract class ParkhausServlet extends HttpServlet {
     //TODO MVC Parkhaus Model
-    //TODO Reset Button fürs resetten des Parkhauses
 
     /* abstract methods, to be defined in subclasses */
     abstract String NAME(); // each ParkhausServlet should have a name, e.g. "Level1"
     abstract int MAX(); // maximum number of parking slots of a single parking level
     abstract String config(); // configuration of a single parking level
     Parkhaus parkhaus;
+    DailyIncomeView dV;
+    WeeklyIncomeView wV;
     /**
      * HTTP GET
      */
@@ -41,6 +44,12 @@ public abstract class ParkhausServlet extends HttpServlet {
                 // Overwrite Parkhaus config parameters
                 // Max, open_from, open_to, delay, simulation_speed
                 out.println( config() );
+                if (dV == null & wV == null){
+                    dV = new DailyIncomeView(parkhaus);
+                    wV = new WeeklyIncomeView(parkhaus);
+                    getContext().setAttribute(NAME()+"Daily",dV);
+                    getContext().setAttribute(NAME()+"Weekly",wV);
+                }
                 break;
             case "sum":
                 out.println(ButtonCalc.calcSum(parkhaus.getCarsList()));

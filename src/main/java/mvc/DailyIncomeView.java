@@ -21,7 +21,7 @@ public class DailyIncomeView implements IObserverInterface {
     }
     @Override
     public void update() {
-        income = s.statistikErstellen(pModel.getTicket());
+        income = s.statistikErstellen(pModel.getTicket())/100.0;
     }
     public double getDailyIncome(){
         return income;

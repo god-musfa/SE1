@@ -72,5 +72,4 @@ class DailyIncomeViewTest {
         wi.enterCar(c3);
         assertEquals(0,wi.leave(1,0));
     }
-
 }
