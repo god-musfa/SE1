@@ -67,7 +67,7 @@ class ParamsHelperTest {
     }
 
     @Test
-    void getparkhaus_name() {
+    void getParkhausName() {
         assertEquals("Etage1",ParamsHelper.getParkhausName(params));
 
     }
