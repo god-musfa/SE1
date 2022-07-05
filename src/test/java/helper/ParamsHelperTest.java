@@ -47,13 +47,13 @@ class ParamsHelperTest {
         assertEquals("5",ParamsHelper.getSpace(params));
     }
     @Test
-    void getClient_category() {
-        assertEquals("Frau",ParamsHelper.getClient_category(params));
+    void getClientCategory() {
+        assertEquals("Frau",ParamsHelper.getClientCategory(params));
     }
 
     @Test
-    void getVehicle_type() {
-        assertEquals("SUV",ParamsHelper.getVehicle_type(params));
+    void getVehicleType() {
+        assertEquals("SUV",ParamsHelper.getVehicleType(params));
     }
 
     @Test
@@ -68,7 +68,7 @@ class ParamsHelperTest {
 
     @Test
     void getparkhaus_name() {
-        assertEquals("Etage1",ParamsHelper.getparkhaus_name(params));
+        assertEquals("Etage1",ParamsHelper.getParkhausName(params));
 
     }
 

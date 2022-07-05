@@ -27,10 +27,10 @@ public class ParamsHelper {
     public static String getSpace(String[] params){
         return params[6];
     }
-    public static String getClient_category(String[] params){
+    public static String getClientCategory(String[] params){
         return params[7];
     }
-    public static String getVehicle_type(String[] params){
+    public static String getVehicleType(String[] params){
         return params[8];
     }
     public static String getLicense(String[] params){
@@ -39,7 +39,7 @@ public class ParamsHelper {
     public static String getBegin(String[] params){
         return params[10];
     }
-    public static String getparkhaus_name(String[] params){
+    public static String getParkhausName(String[] params){
         return params[11];
     }
 }
