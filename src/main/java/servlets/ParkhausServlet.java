@@ -79,7 +79,6 @@ public abstract class ParkhausServlet extends HttpServlet {
                 break;
             case "chart":
                 sct = new StatisticCarTypes();
-                StatisticCarTypes sct = new StatisticCarTypes();
                 out.println(sct.createPieStatisticsJSON(parkhaus.getCarsList()));
                 break;
             case "Gesamtanzahl Autos":
