@@ -149,7 +149,7 @@ class ParkhausTest {
         ph.enter(c2);
         assertEquals(-1,ph.enter(c3));
 
-}
+    }
 
     @Test
     void reset() {

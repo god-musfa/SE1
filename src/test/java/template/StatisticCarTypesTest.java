@@ -77,13 +77,13 @@ class StatisticCarTypesTest {
     }
 
     @Test
-    @DisplayName("Testet gefuelltes statistikErstellen")
+    @DisplayName("Tests output string of a filled statistic")
     void statistikErstellenTest() {
         assertEquals("{\"data\":[{\"values\":[3,2],\"labels\":[\"Pkw\",\"Suv\"],\"type\":\"pie\"}]}",sct.statistikErstellen(testvalues).toString());
     }
 
     @Test
-    @DisplayName("Testet leeres statistikErstellen")
+    @DisplayName("Tests the output string of an empty statistic")
     void statistikErstellenTest2() {
         List<CarIF> tv = new ArrayList<>();
         assertEquals("{\"data\":[{\"values\":[],\"labels\":[],\"type\":\"pie\"}]}",sct.statistikErstellen(tv).toString());
