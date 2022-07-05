@@ -4,7 +4,7 @@ import base.TicketIF;
 
 import java.util.List;
 
-public class StatistikWochenEinnahmen extends EinnahmenStatistik {
+public class WeeklyIncomeStatistic extends IncomeStatistic {
     @Override
     public double valueBerechnen(List<TicketIF> tickets) {
         int wocheInUnix = 86400000*7;

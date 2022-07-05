@@ -37,7 +37,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
                 Enter e = new Enter(this,c);
                 clist.add(e);
                 elist.add(e);
-                c.setParkplatzNumber(i+1);
+                c.setParkingSpotNumber(i+1);
 
                 this.notifyObservers();
                 return i+1;
@@ -55,7 +55,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
             }
             if (cars[i].getNr() == nr){
                 CarIF car = cars[i];
-                car.getTicket().setPrice(FahrzeugtypHelper.getFahrzeug(car.getVehicleType()), KundentypHelper.getKunde(car.getKundentyp()),duration);
+                car.getTicket().setPrice(FahrzeugtypHelper.getCar(car.getVehicleType()), KundentypHelper.getKunde(car.getKundentyp()),duration);
                 double price = car.getTicket().getPrice();
                 cars[i] = null;
                 Leave l = new Leave(this,nr);
@@ -120,7 +120,7 @@ public class Parkhaus implements ParkhausIF, IModelInterface {
     public void undo(){
         if (!elist.isEmpty()) elist.remove(elist.size()-1).undo();
     }
-    public int getParkplatzSize(){
+    public int getParkingSpotSize(){
         return cars.length;
     }
     public void changeMax(int newSize){

@@ -106,7 +106,7 @@ class ParkhausTest {
     @Test
     @DisplayName("Check parking lot size")
     void getParkplatzSize() {
-        assertEquals(15,ph.getParkplatzSize());
+        assertEquals(15,ph.getParkingSpotSize());
     }
 
     @ParameterizedTest
@@ -114,7 +114,7 @@ class ParkhausTest {
     @DisplayName("Checks the change in maximum parking spaces")
     void changeMaxTest(int w) {
         ph.changeMax(w);
-        assertEquals(w, ph.getParkplatzSize());
+        assertEquals(w, ph.getParkingSpotSize());
     }
 
     @Test

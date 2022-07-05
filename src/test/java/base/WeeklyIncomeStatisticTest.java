@@ -1,6 +1,6 @@
 package base;
 
-import template.StatistikWochenEinnahmen;
+import template.WeeklyIncomeStatistic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,12 +8,12 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EinnahmenStatistikWochenEinnahmenTest {
+class WeeklyIncomeStatisticTest {
     ArrayList<TicketIF> tickets;
-    StatistikWochenEinnahmen wochenstatistik;
+    WeeklyIncomeStatistic wochenstatistik;
     @BeforeEach
     void setUp() {
-        wochenstatistik = new StatistikWochenEinnahmen();
+        wochenstatistik = new WeeklyIncomeStatistic();
         tickets = new ArrayList<>();
         tickets.add(new Ticket("fdsfgsdgrr", "1"));
         tickets.add(new Ticket("fasgsdhhhg", "1"));
