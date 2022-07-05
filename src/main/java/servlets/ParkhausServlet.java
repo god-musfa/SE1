@@ -52,17 +52,17 @@ public abstract class ParkhausServlet extends HttpServlet {
                 }
                 break;
             case "sum":
-                out.println(ButtonCalc.calcSum(parkhaus.getCarsList()));
+                out.println(ButtonCalc.calcSum(parkhaus.getCarsList())/100);
                 break;
             case "avg":
-                out.println(ButtonCalc.calcAvgPrice(parkhaus.getCarsList()));
-                out.println(ButtonCalc.calcAvgDuration(parkhaus.getCarsList()));
+                out.println("Price: " + ButtonCalc.calcAvgPrice(parkhaus.getCarsList())/100);
+                out.println(" Duration: " + ButtonCalc.calcAvgDuration(parkhaus.getCarsList())/100);
                 break;
             case "min":
-                out.println(ButtonCalc.calcMin(parkhaus.getCarsList()));
+                out.println(ButtonCalc.calcMin(parkhaus.getCarsList())/100);
                 break;
             case "max":
-                out.println(ButtonCalc.calcMax(parkhaus.getCarsList()));
+                out.println(ButtonCalc.calcMax(parkhaus.getCarsList())/100);
                 break;
             case "cars":
                 out.println(parkhaus.carsListToString());
