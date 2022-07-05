@@ -10,5 +10,6 @@ public interface IModelInterface extends IObservableInterface{
     public int enter(CarIF c);
     public double leave(int i,long duration);
     public List<TicketIF> getTicket();
+    public List<CarIF> getCarsList();
 
 }
