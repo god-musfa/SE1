@@ -12,7 +12,7 @@
     <meta property="og:description" content="Bachelor Course Software Engineering 1 (SE1), Hochschule Bonn-Rhein-Sieg.">
     <link rel="shortcut icon" href="https://kaul.inf.h-brs.de/favicon.ico" />
     <title>Tomcat Parkhaus</title>
-    <script src="https://kaul.inf.h-brs.de/ccmjs/mkaul-components/parkhaus/versions/ccm.parkhaus-11.3.0.js"></script>
+    <script src="https://kaul.inf.h-brs.de/ccmjs/mkaul-components/parkhaus/versions/ccm.parkhaus-11.4.1.js"></script>
 
 
     <style>
@@ -51,7 +51,7 @@
 </div>
 <div class="box lightyellow">
     <h1>Parkhaus Etage 1</h1>
-    <ccm-parkhaus-11-3-0 server_url="./level1-servlet"
+    <ccm-parkhaus-11-4-1 server_url="./level1-servlet"
                          debug="true"
                          name="Etage1"
                          license_max="15"
@@ -62,11 +62,11 @@
                          vehicle_types='["PKW","SUV"]'
                          price_factor='{"SUV":2,"Family":0.5}'
                          max="11">
-    </ccm-parkhaus-11-3-0>
+    </ccm-parkhaus-11-4-1>
 </div>
 <div class="box lightgreen">
     <h1>Parkhaus Etage 2</h1>
-    <ccm-parkhaus-11-3-0 server_url="./level2-servlet"
+    <ccm-parkhaus-11-4-1 server_url="./level2-servlet"
                          name="Etage2"
                          license_min="16"
                          license_max="30"
@@ -78,7 +78,7 @@
                          debug="true"
                          hide_table="false"
                          SALT="456">
-    </ccm-parkhaus-11-3-0>
+    </ccm-parkhaus-11-4-1>
 </div>
 </body>
 </html>
