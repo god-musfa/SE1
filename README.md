@@ -9,3 +9,5 @@
 - [Iterationsbericht](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Iterationsbericht)
 - [Klassendiagramm](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Klassendiagramm)
 - [UML Use Case](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/UML-Use-Case)
+- [UML Verteilungsdiagramm](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/UML-Verteilungsdiagramm)
+- [User Stories](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/User-Stories)
