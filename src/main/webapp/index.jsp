@@ -57,9 +57,9 @@
                          license_max="15"
                          extra_buttons='["reset","sum","min","max","avg","Gesamtanzahl Autos"]'
                          extra_charts='[{"extra_class":"chart","extra_inner":"","extra_popup_title":""}]'
-                         client_categories='["Frau"]'
+                         client_categories='["Frau","Familie","Abonnent"]'
                          space_color='{"1":"pink"}'
-                         vehicle_types='["PKW","SUV"]'
+                         vehicle_types='["PKW","SUV","Zweirad"]'
                          price_factor='{"SUV":2,"Family":0.5}'
                          max="11">
     </ccm-parkhaus-11-4-1>
@@ -73,7 +73,7 @@
                          extra_buttons='["reset"]'
                          client_categories='["Behinderte","Firmenkunde"]'
                          space_color='{"1":"yellow","6":"black"}'
-                         vehicle_types='["PKW","SUV"]'
+                         vehicle_types='["PKW","SUV","Pickup"]'
                          price_factor='{"SUV":2,"Business":1}'
                          debug="true"
                          hide_table="false"
