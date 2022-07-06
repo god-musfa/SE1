@@ -19,3 +19,4 @@
 - [Direktlink zur SonarQube Seite](https://sepp-sonar.inf.h-brs.de/dashboard?id=Team_19)
 - [Kanban Board](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Kanban-Board)
 - [Robustheitsdiagramm](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Robustheitsdiagramm)
+- [UML Aktivitätsdiagramme](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/UML-Aktivit%C3%A4tsdiagramme)
