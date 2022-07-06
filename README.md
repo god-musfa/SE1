@@ -1,4 +1,4 @@
-#Parkhaus Simulation (Team 24)
+#Parkhaus Simulation (Team19)
 ## Teammitglieder:  
 - Alexander Bause
 - Cedric Betke
