@@ -15,3 +15,5 @@
 - [Digitalisierungskonzept](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Digitalisierungskonzept)
 - [Sequenzdiagramme](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Sequenzdiagramme)
 - [Lauffähige JUnit-Tests](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/tree/main/src/test/java)
+- [Testüberdeckung und Ergebnis von SonarQube](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Test%C3%BCberdeckung-und-Ergebnis-von-SonarQube)
+- [Direktlink zur SonarQube Seite](https://sepp-sonar.inf.h-brs.de/dashboard?id=Team_19)
