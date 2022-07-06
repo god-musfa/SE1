@@ -35,7 +35,7 @@ public class PayServlet extends HttpServlet {
         ss.setAttribute("dIV",dIV);
         ss.setAttribute("wIV",wIV);
         ss.setAttribute("ChartView",cST);
-        response.sendRedirect("dailyStatistik.jsp");
+        response.sendRedirect("Statistik.jsp");
 
 
     }
