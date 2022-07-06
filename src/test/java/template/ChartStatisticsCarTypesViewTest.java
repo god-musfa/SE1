@@ -27,14 +27,7 @@ class ChartStatisticsCarTypesViewTest {
         c1 = new Car(st1);
         c2 = new Car(st2);
         c3 = new Car(st3);
-        c1.getTicket().setPrice(100);
-        c2.getTicket().setPrice(1500);
-        c3.getTicket().setPrice(401);
 
-
-        c1.getTicket().setDuration(0);
-        c2.getTicket().setDuration(1);
-        c3.getTicket().setDuration(86400);
     }
 
 
