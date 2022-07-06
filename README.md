@@ -25,3 +25,4 @@
 - [Direktlink zur SonarQube Seite](https://sepp-sonar.inf.h-brs.de/dashboard?id=Team_19)
 - [Verzeichnis der eingesetzten Patterns](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Patternverzeichnis)
 - [Zielkonflikte](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Zielkonflikte)
+- [Gesamt Retrospektive](https://vm-2d21.inf.h-brs.de/mk_se1_ss22_Team_19/mk_se1_ss22_Team_19/-/wikis/Gesamt-Retrospektive)
